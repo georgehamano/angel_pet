@@ -50,6 +50,7 @@ get_header();
 		endif;
 		?>
 	<!-- お試し -->
+	<!-- お試し -->
 	</main><!-- #main -->
 
 <?php
