@@ -1,0 +1,205 @@
+// 変数定義
+$breakpoint-tablet: 768px;
+$color-primary: #0073aa;
+$color-text: #333;
+$color-background: #fff;
+$color-background-light: #f5f5f5;
+$shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+$transition-duration: 0.3s;
+
+// ミックスイン
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease;
+}
+
+@mixin menu-item-animation($delay) {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all $transition-duration ease;
+  transition-delay: $delay;
+}
+
+// ヘッダースタイル
+.site-header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+  padding: 2rem;
+  z-index: 1000;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    left: 0;
+    width: 250px;
+    background: $color-background;
+    box-shadow: $shadow;
+  }
+}
+
+.site-branding {
+  @include flex-center;
+  margin-bottom: 2rem;
+}
+
+.site-title {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+// ナビゲーション
+.main-navigation {
+  margin-top: 2rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $color-text;
+    @include transition(color);
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// ハンバーガーメニュー
+.menu-toggle {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $color-text;
+    margin: 6px 0;
+    @include transition;
+  }
+}
+
+// モバイルメニュー
+#site-navigation {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background: $color-background-light;
+  padding: 2rem;
+  box-shadow: -$shadow;
+  @include transition(right);
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  &.is-open {
+    right: 0;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      right: auto;
+    }
+  }
+}
+
+.menu-container {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// メニューアイテムのアニメーション
+#site-navigation.is-open {
+  .menu li {
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        @include menu-item-animation($i * 0.1s);
+      }
+    }
+  }
+}
+
+// メインコンテンツ
+#page {
+  margin-right: 0;
+  @include transition(transform);
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-left: 250px;
+    margin-right: 0;
+    transform: none;
+  }
+}
+
+#site-navigation.is-open + #page {
+  transform: translateX(-80%);
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    transform: none;
+  }
+}
+
+// その他のスタイル（既存のCSSから変換）
+// ... existing code ... 
