@@ -11,22 +11,22 @@
 @media screen and (min-width: 768px) {
   .site-header {
     left: 0;
-    width: 250px;
+    width: 200px;
     background: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-left: 50px;
+    padding-right: 0px;
   }
 }
 
 .site-branding {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.site-title {
-  margin: 1rem 0;
-  text-align: center;
+.site-title,
+.site-description {
+  display: none;
 }
 
 .main-navigation {

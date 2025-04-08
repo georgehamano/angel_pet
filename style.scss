@@ -38,9 +38,10 @@ $transition-duration: 0.3s;
 
   @media screen and (min-width: $breakpoint-tablet) {
     left: 0;
-    width: 250px;
+    width: 200px;
     background: $color-background;
-    box-shadow: $shadow;
+    padding-left:50px;
+    padding-right : 0px;
   }
 }
 

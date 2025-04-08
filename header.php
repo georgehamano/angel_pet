@@ -56,6 +56,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
+                    <span>MENU</span>
                 </button>
                 <div class="menu-container">
                     <?php
