@@ -15,17 +15,48 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<div class="mv-slider">
+    <div class="swiper mv-slider01">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slider-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider01.jpg" alt="スライダー1">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider02.jpg" alt="スライダー2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper mv-slider02">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slider-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider01.jpg" alt="スライダー3">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider02.jpg" alt="スライダー4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-		<?php
+<main id="primary" class="site-main">
+
+    <?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
+    <header>
+        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+    </header>
+    <?php
 			endif;
 
 			/* Start the Loop */
@@ -49,10 +80,10 @@ get_header();
 
 		endif;
 		?>
-	<!-- お試し -->
-	<!-- お試し -->
-	<!-- お試し -->
-	</main><!-- #main -->
+    <!-- お試し -->
+    <!-- お試し -->
+    <!-- お試し -->
+</main><!-- #main -->
 
 <?php
 get_sidebar();

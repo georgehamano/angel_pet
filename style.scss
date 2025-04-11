@@ -1,11 +1,15 @@
 // 変数定義
 $breakpoint-tablet: 768px;
 $color-primary: #0073aa;
-$color-text: #333;
+$color-text: #515151;
 $color-background: #fff;
 $color-background-light: #f5f5f5;
 $shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 $transition-duration: 0.3s;
+
+body{
+  margin: 0;
+}
 
 // ミックスイン
 @mixin flex-center {
@@ -19,7 +23,6 @@ $transition-duration: 0.3s;
 }
 
 @mixin menu-item-animation($delay) {
-  opacity: 0;
   transform: translateX(20px);
   transition: all $transition-duration ease;
   transition-delay: $delay;
@@ -31,23 +34,100 @@ $transition-duration: 0.3s;
   right: 0;
   top: 0;
   width: 100%;
-  height: 100vh;
-  background: transparent;
-  padding: 2rem;
+  height: 80px;
+  background: $color-background;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 
   @media screen and (min-width: $breakpoint-tablet) {
     left: 0;
     width: 200px;
     background: $color-background;
-    padding-left:50px;
-    padding-right : 0px;
+    height: 100vh;
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.header-contact {
+  display: none;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: flex;
+    width: 100%;
+    height: 100px;
+  }
+
+  .contact-button {
+    display: block;
+    width: 100%;
+    background-color: $color-background;
+    color: $color-text;
+    text-decoration: none;
+    line-height: 60px;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
   }
 }
 
 .site-branding {
-  @include flex-center;
+  display: block;
   margin-bottom: 2rem;
+  text-align: left;
+
+  .custom-logo-link {
+    display: block;
+    max-width: 200px;
+    margin: 15px 0 15px 18px;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      margin: 0 auto;
+    }
+  }
+
+  .custom-logo {
+    max-width: 100%;
+    height: auto;
+    width: 267px;
+    height: 50px;
+    object-fit: contain;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    text-align: center;
+
+    .custom-logo-link {
+      margin: 0 auto;
+    }
+
+    .desktop-logo {
+      display: block;
+      width: 58px;
+    }
+    
+    .mobile-logo {
+      display: none;
+    }
+  }
 }
 
 .site-title {
@@ -57,7 +137,6 @@ $transition-duration: 0.3s;
 
 // ナビゲーション
 .main-navigation {
-  margin-top: 2rem;
 
   ul {
     list-style: none;
@@ -108,6 +187,10 @@ $transition-duration: 0.3s;
     margin: 6px 0;
     @include transition;
   }
+  span.menu-text {
+    font-size: 10px;
+    line-height: 25px;
+}
 }
 
 // モバイルメニュー
@@ -116,10 +199,11 @@ $transition-duration: 0.3s;
   right: -100%;
   top: 0;
   width: 250px;
-  height: 100vh;
-  background: $color-background-light;
+  height: auto;
+  min-height: 100vh;
+  background: $color-background;
   padding: 2rem;
-  box-shadow: -$shadow;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   @include transition(right);
 
   @media screen and (min-width: $breakpoint-tablet) {
@@ -171,17 +255,6 @@ $transition-duration: 0.3s;
   }
 }
 
-// メニューアイテムのアニメーション
-#site-navigation.is-open {
-  .menu li {
-    @for $i from 1 through 5 {
-      &:nth-child(#{$i}) {
-        @include menu-item-animation($i * 0.1s);
-      }
-    }
-  }
-}
-
 // メインコンテンツ
 #page {
   margin-right: 0;
@@ -204,3 +277,67 @@ $transition-duration: 0.3s;
 
 // その他のスタイル（既存のCSSから変換）
 // ... existing code ... 
+
+.mv-slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    .mv-slider01,
+    .mv-slider02 {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slider-item {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-width: 100%;
+        }
+    }
+}
+
+// スライダーのアニメーション調整
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0;
+} 

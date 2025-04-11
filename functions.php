@@ -152,6 +152,13 @@ function angel_pet_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'angel_pet_scripts' );
 
+function enqueue_swiper_scripts() {
+	wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+	wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), '1.0', true);
+	wp_enqueue_script('custom-swiper', get_template_directory_uri() . '/js/custom-swiper.js', array('swiper-js'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_swiper_scripts');
+
 /**
  * Implement the Custom Header feature.
  */
