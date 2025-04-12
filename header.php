@@ -17,6 +17,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <?php wp_head(); ?>
 </head>
@@ -27,7 +28,8 @@
         <a class="skip-link screen-reader-text"
             href="#primary"><?php esc_html_e( 'Skip to content', 'angel_pet' ); ?></a>
         <div class="header-contact">
-            <p>まずはご相談ください<a href="tel:0120-011-200">0120-011-200</a></p>
+            <p>まずはご相談ください<span><a href="tel:0120-011-200"><i class="fa-solid fa-phone"></i>0120-011-200</a><br>
+                    （電話受付 9:00 - 17:00）</span></p>
             <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="contact-button">お問い合わせ・ご予約はこちら</a>
         </div>
         <header id="masthead" class="site-header">

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-size: 16px;
 }
 
 .site-header {
@@ -33,17 +34,46 @@ body {
 @media screen and (min-width: 768px) {
   .header-contact {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
     height: 100px;
+    gap: 70px;
+  }
+  .header-contact p {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .header-contact p span {
+    display: inline-block;
+    margin-top: 0;
+    font-size: 0.7rem;
+    text-align: right;
+  }
+  .header-contact p span a {
+    text-decoration: none;
+    color: #515151;
+    font-size: 1.4rem;
+  }
+  .header-contact p span a i {
+    margin-right: 5px;
   }
 }
 .header-contact .contact-button {
   display: block;
-  width: 100%;
+  width: auto;
   background-color: #fff;
   color: #515151;
   text-decoration: none;
   line-height: 60px;
+  white-space: nowrap;
+  padding: 0 20px;
 }
 .header-contact .contact-button:hover {
   background-color: #005177;
