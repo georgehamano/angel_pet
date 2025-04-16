@@ -138,13 +138,31 @@ add_action( 'widgets_init', 'angel_pet_widgets_init' );
  * Enqueue scripts and styles.
  */
 function angel_pet_scripts() {
-	wp_enqueue_style( 'angel_pet-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'angel_pet-style', 'rtl', 'replace' );
+	// Google Fontsの追加
+	wp_enqueue_style('google-fonts-preconnect', '', false, null);
+	wp_style_add_data('google-fonts-preconnect', 'html_tag', 'link');
+	wp_style_add_data('google-fonts-preconnect', 'attributes', array(
+		'rel' => 'preconnect',
+		'href' => 'https://fonts.googleapis.com'
+	));
 
-	wp_enqueue_script( 'angel_pet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style('google-fonts-gstatic-preconnect', '', false, null);
+	wp_style_add_data('google-fonts-gstatic-preconnect', 'html_tag', 'link');
+	wp_style_add_data('google-fonts-gstatic-preconnect', 'attributes', array(
+		'rel' => 'preconnect',
+		'href' => 'https://fonts.gstatic.com',
+		'crossorigin' => 'anonymous'
+	));
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap', array(), null);
+
+	wp_enqueue_style('angel_pet-style', get_stylesheet_uri(), array(), _S_VERSION);
+	wp_style_add_data('angel_pet-style', 'rtl', 'replace');
+
+	wp_enqueue_script('angel_pet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 
 	// ハンバーガーメニューのスクリプト

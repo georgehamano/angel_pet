@@ -1,0 +1,25 @@
+// ミックスイン
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease;
+}
+
+@mixin menu-item-animation($delay) {
+  transform: translateX(20px);
+  transition: all $transition-duration ease;
+  transition-delay: $delay;
+}
+
+// フォントミックスイン
+@mixin font-serif {
+    font-family: 'Noto Serif JP', serif !important;
+}
+
+@mixin font-sans {
+    font-family: 'Noto Sans JP', sans-serif !important;
+} 

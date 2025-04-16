@@ -28,9 +28,11 @@
         <a class="skip-link screen-reader-text"
             href="#primary"><?php esc_html_e( 'Skip to content', 'angel_pet' ); ?></a>
         <div class="header-contact">
-            <p>まずはご相談ください<span><a href="tel:0120-011-200"><i class="fa-solid fa-phone"></i>0120-011-200</a><br>
+            <p><span class="header-contact-text">まずはご相談ください</span><span class="header-contact-tel"><a
+                        href="tel:0120-011-200"><i class="fa-solid fa-phone"></i>0120-011-200</a><br>
                     （電話受付 9:00 - 17:00）</span></p>
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="contact-button">お問い合わせ・ご予約はこちら</a>
+            <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                class="contact-button">お問い合わせ・ご予約はこちら<br><span>Contact・Reserve</span></a>
         </div>
         <header id="masthead" class="site-header">
             <div class="site-branding">
@@ -53,10 +55,9 @@
 
             <nav id="site-navigation" class="main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
                     <span class="menu-text">MENU</span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
                 </button>
                 <div class="menu-container">
                     <?php

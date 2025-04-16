@@ -1,0 +1,13 @@
+// 変数とミックスインのインポート
+@import 'common/variables';
+@import 'common/mixins';
+
+// ベーススタイルのインポート
+@import 'common/base';
+
+// レイアウトスタイルのインポート
+@import 'layout/header';
+@import 'layout/navigation';
+
+// ページスタイルのインポート
+@import 'pages/front-page'; 

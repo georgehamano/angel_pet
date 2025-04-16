@@ -14,75 +14,82 @@
 
 get_header();
 ?>
-
-<div class="mv-slider">
-    <div class="swiper mv-slider01">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slider-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider01.jpg" alt="スライダー1">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slider-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider02.jpg" alt="スライダー2">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="swiper mv-slider02">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slider-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider01.jpg" alt="スライダー3">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slider-item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider02.jpg" alt="スライダー4">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <main id="primary" class="site-main">
+    <section class="mv-slider-section">
+        <div class="mv-slider-text">
+            <p class="vertical-text">Angel Pet Cemetery</p>
+            <p class="side-text">Cemetery & Funeral Center</p>
+        </div>
+        <div class="mv-slider">
+            <div class="swiper mv-slider01">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider01.jpg" alt="スライダー1">
+                            <h2><span>火葬からご納骨まで</span><br><span>心を込めたご供養を</span></h2>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider-item">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/mv-slider02.jpg" alt="スライダー2">
+                            <h2><span>火葬からご納骨まで</span><br><span>心を込めたご供養を</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <?php
-		if ( have_posts() ) :
+            <div class="business-hours"><span class="business-hours-text">本日の参拝時間</span><span
+                    class="business-hours-times">9:00-17:00</span></div>
+        </div>
+    </section>
+    <section class="news-section">
+        <div class="news-container">
+            <div class="news-header">
+                <h2 class="news-title">お知らせ</h2>
+            </div>
+            <div class="news-content">
+                <?php
+                if (have_posts()) :
+                    while (have_posts()) :
+                        the_post();
+                        ?>
+                <article class="news-item">
+                    <div class="news-thumbnail">
+                        <?php if (has_post_thumbnail()) : ?>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail('medium'); ?>
+                        </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="news-meta">
+                        <span class="news-category">
+                            <?php
+                                    $categories = get_the_category();
+                                    if (!empty($categories)) {
+                                        echo esc_html($categories[0]->name);
+                                    }
+                                    ?>
+                        </span>
+                        <time class="news-date" datetime="<?php echo get_the_date('c'); ?>">
+                            <?php echo get_the_date('Y.m.d'); ?>
+                        </time>
+                    </div>
+                    <h3 class="news-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                    </h3>
+                </article>
+                <?php
+                    endwhile;
+                    the_posts_navigation();
+                else :
+                    echo '<p class="no-news">お知らせはありません。</p>';
+                endif;
+                ?>
+            </div>
+        </div>
+    </section>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-    <header>
-        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-    </header>
-    <?php
-			endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-    <!-- お試し -->
-    <!-- お試し -->
-    <!-- お試し -->
 </main><!-- #main -->
 
 <?php

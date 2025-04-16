@@ -1,0 +1,19 @@
+// ベーススタイル
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Noto Serif JP', serif;
+}
+
+p, a {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+// フォントクラス
+.serif {
+    @include font-serif;
+}
+
+.sans {
+    @include font-sans;
+} 

@@ -1,0 +1,118 @@
+// ナビゲーション
+.main-navigation {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $color-text;
+    @include transition(color);
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// ハンバーガーメニュー
+.menu-toggle {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $color-text;
+    margin: 6px 0;
+    @include transition;
+  }
+  span.menu-text {
+    font-size: 10px;
+    line-height: 25px;
+  }
+}
+
+// モバイルメニュー
+#site-navigation {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 250px;
+  height: auto;
+  min-height: 100vh;
+  background: $color-background;
+  padding: 2rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  @include transition(right);
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  &.is-open {
+    right: 0;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      right: auto;
+    }
+  }
+}
+
+.menu-container {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+} 
