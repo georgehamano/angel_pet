@@ -1,9 +1,11 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 10 | @import 'components/button';
- *    |         ^^^^^^^^^^^^^^^^^^^
- *    '
- *   style.scss 10:9  root stylesheet */
+/* Error: It's not clear which file to import. Found:
+ *   common/_variables.scss
+ *   common/variables.scss
+ *   ,
+ * 2 | @import 'common/variables';
+ *   |         ^^^^^^^^^^^^^^^^^^
+ *   '
+ *   style.scss 2:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +15,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 10 \2502  @import 'components/button';\a    \2502          ^^^^^^^^^^^^^^^^^^^\a    \2575 \a   style.scss 10:9  root stylesheet";
+  content: "Error: It's not clear which file to import. Found:\a   common/_variables.scss\a   common/variables.scss\a   \2577 \a 2 \2502  @import 'common/variables';\a   \2502          ^^^^^^^^^^^^^^^^^^\a   \2575 \a   style.scss 2:9  root stylesheet";
 }

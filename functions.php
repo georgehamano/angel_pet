@@ -157,7 +157,7 @@ function angel_pet_scripts() {
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap', array(), null);
 
 	// メインのスタイルシートを読み込み
-	wp_enqueue_style('angel_pet-style', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION);
+	wp_enqueue_style('angel_pet-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_style_add_data('angel_pet-style', 'rtl', 'replace');
 
 	wp_enqueue_script('angel_pet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -165,11 +165,8 @@ function angel_pet_scripts() {
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
-
-	// ハンバーガーメニューのスクリプト
-	wp_enqueue_script('angel-pet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true);
 }
-add_action( 'wp_enqueue_scripts', 'angel_pet_scripts' );
+add_action('wp_enqueue_scripts', 'angel_pet_scripts');
 
 function enqueue_swiper_scripts() {
 	wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
@@ -204,40 +201,6 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/**
- ここから追加
- **/
-// テーマセットアップ（add_theme_support など）
-function mytheme_setup() {
-  // HTML5マークアップのサポート
-  add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
-
-  // アイキャッチ画像（サムネイル）のサポート
-  add_theme_support('post-thumbnails');
-
-  // タイトルタグを自動で出力（<title>）
-  add_theme_support('title-tag');
-
-  // カスタムロゴ
-  add_theme_support('custom-logo');
-
-  // ナビゲーションメニューの登録
-  register_nav_menus(array(
-    'main_menu' => 'メインメニュー',
-    'footer_menu' => 'フッターメニュー'
-  ));
-}
-add_action('after_setup_theme', 'mytheme_setup');
-
-function mytheme_scripts() {
-  // メインCSS
-  wp_enqueue_style('mytheme-style', get_stylesheet_uri());
-
-  // 例：main.js を読み込みたいとき（テーマディレクトリに入れておく）
-  wp_enqueue_script('mytheme-script', get_template_directory_uri() . '/js/main.js', array(), null, true);
-}
-add_action('wp_enqueue_scripts', 'mytheme_scripts');
 
 // WPのバージョン情報などをヘッダーから削除
 remove_action('wp_head', 'wp_generator');

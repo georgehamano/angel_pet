@@ -1,0 +1,40 @@
+.sidebar {
+  background-color: $color-white;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .widget {
+    margin-bottom: $spacing-xl;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .widget-title {
+      font-size: $font-size-large;
+      color: $color-text;
+      margin-bottom: $spacing-md;
+      padding-bottom: $spacing-sm;
+      border-bottom: 2px solid $color-gray;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: $spacing-sm;
+
+        a {
+          color: $color-text;
+          transition: color $transition-base;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+} 

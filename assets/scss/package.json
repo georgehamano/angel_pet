@@ -1,0 +1,17 @@
+{
+  "name": "scss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass style.scss style.css --style compressed",
+    "watch": "sass --watch style.scss:style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.71.0"
+  }
+}

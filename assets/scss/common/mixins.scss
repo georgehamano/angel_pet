@@ -1,0 +1,60 @@
+// レイアウト
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// トランジション
+@mixin transition($property: all) {
+  transition: $property $transition-duration ease;
+}
+
+@mixin menu-item-animation($delay) {
+  transform: translateX(20px);
+  transition: all $transition-duration ease;
+  transition-delay: $delay;
+}
+
+// フォント
+@mixin font-serif {
+  font-family: 'Noto Serif JP', serif !important;
+}
+
+@mixin font-sans {
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+// メディアクエリ
+@mixin tablet {
+  @media screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-tablet - 1) {
+    @content;
+  }
+}
+
+// 共通スタイル
+@mixin vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+@mixin line-decoration($color: $color-text, $width: 0.5px, $height: 30px) {
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  position: absolute;
+} 

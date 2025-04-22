@@ -1,0 +1,53 @@
+// Background Colors
+.bg-primary { background-color: $color-primary; }
+.bg-secondary { background-color: $color-secondary; }
+.bg-success { background-color: $color-success; }
+.bg-danger { background-color: $color-danger; }
+.bg-warning { background-color: $color-warning; }
+.bg-info { background-color: $color-info; }
+.bg-light { background-color: $color-light; }
+.bg-dark { background-color: $color-dark; }
+.bg-white { background-color: $color-white; }
+
+// Text Colors
+.text-primary { color: $color-primary; }
+.text-secondary { color: $color-secondary; }
+.text-success { color: $color-success; }
+.text-danger { color: $color-danger; }
+.text-warning { color: $color-warning; }
+.text-info { color: $color-info; }
+.text-light { color: $color-light; }
+.text-dark { color: $color-dark; }
+.text-white { color: $color-white; }
+
+// Border Colors
+.border-primary { border-color: $color-primary; }
+.border-secondary { border-color: $color-secondary; }
+.border-success { border-color: $color-success; }
+.border-danger { border-color: $color-danger; }
+.border-warning { border-color: $color-warning; }
+.border-info { border-color: $color-info; }
+.border-light { border-color: $color-light; }
+.border-dark { border-color: $color-dark; }
+.border-white { border-color: $color-white; }
+
+// Hover Colors
+.hover\:bg-primary:hover { background-color: $color-primary; }
+.hover\:bg-secondary:hover { background-color: $color-secondary; }
+.hover\:bg-success:hover { background-color: $color-success; }
+.hover\:bg-danger:hover { background-color: $color-danger; }
+.hover\:bg-warning:hover { background-color: $color-warning; }
+.hover\:bg-info:hover { background-color: $color-info; }
+.hover\:bg-light:hover { background-color: $color-light; }
+.hover\:bg-dark:hover { background-color: $color-dark; }
+.hover\:bg-white:hover { background-color: $color-white; }
+
+.hover\:text-primary:hover { color: $color-primary; }
+.hover\:text-secondary:hover { color: $color-secondary; }
+.hover\:text-success:hover { color: $color-success; }
+.hover\:text-danger:hover { color: $color-danger; }
+.hover\:text-warning:hover { color: $color-warning; }
+.hover\:text-info:hover { color: $color-info; }
+.hover\:text-light:hover { color: $color-light; }
+.hover\:text-dark:hover { color: $color-dark; }
+.hover\:text-white:hover { color: $color-white; } 

@@ -45,7 +45,7 @@ get_header();
     <section class="news-section">
         <div class="news-container">
             <div class="news-header">
-                <h2 class="news-title vertical-text">お知らせ</h2>
+                <h2 class="news-title vertical-title">お知らせ</h2>
             </div>
             <div class="news-content">
                 <?php
