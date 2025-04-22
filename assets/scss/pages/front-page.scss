@@ -1,5 +1,4 @@
 // トップページのメインスタイル
-.front-page {
     // MVスライダーセクション
     .mv-slider-section {
         @include flex-center;
@@ -195,7 +194,7 @@
             }
         }
     }
-} 
+
 // ニュースセクションのスタイル
 .news-section {
     padding: 60px 0;

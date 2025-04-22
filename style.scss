@@ -25,7 +25,6 @@ $transition-duration: 0.3s;
 @import 'assets/scss/layout/header';
 @import 'assets/scss/layout/footer';
 @import 'assets/scss/components/buttons';
-@import 'assets/scss/pages/front-page';
 @import 'assets/scss/utilities/utilities';
 
 // ベーススタイル
@@ -392,4 +391,11 @@ p, a {
   &-next {
     opacity: 0;
   }
+}
+
+// front-page.scssの内容を直接記述
+.news-content {
+  position: relative;
+  overflow: hidden;
+  padding: 200px 0;
 }
