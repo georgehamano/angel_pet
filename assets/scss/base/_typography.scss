@@ -1,0 +1,22 @@
+.serif {
+  font-family: $font-serif !important;
+}
+
+.sans {
+  font-family: $font-sans !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-serif;
+  color: $color-text;
+}
+
+a {
+  color: $color-text;
+  text-decoration: none;
+  @include hover-transition;
+
+  &:hover {
+    color: $color-primary;
+  }
+} 

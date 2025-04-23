@@ -157,16 +157,16 @@ function angel_pet_scripts() {
 	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap', array(), null);
 
 	// メインのスタイルシートを読み込み
-	wp_enqueue_style('angel_pet-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_style_add_data('angel_pet-style', 'rtl', 'replace');
+	wp_enqueue_style( 'angel-pet-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'angel-pet-style', 'rtl', 'replace' );
 
-	wp_enqueue_script('angel_pet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_enqueue_script( 'angel-pet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action('wp_enqueue_scripts', 'angel_pet_scripts');
+add_action( 'wp_enqueue_scripts', 'angel_pet_scripts' );
 
 function enqueue_swiper_scripts() {
 	wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');

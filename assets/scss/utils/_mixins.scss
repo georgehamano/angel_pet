@@ -1,0 +1,34 @@
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media screen and (min-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == "desktop" {
+    @media screen and (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+}
+
+@mixin hover-transition {
+  transition: all 0.3s ease;
+}
+
+@mixin card-style {
+  background: $color-background;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  @include hover-transition;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+} 
