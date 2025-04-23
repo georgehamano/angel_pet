@@ -45,46 +45,46 @@ get_header();
     <section class="news-section">
         <div class="news-container">
             <div class="news-header">
-                <h2 class="news-title vertical-title">お知らせ</h2>
+                <h2 class="vertical-title">お知らせ</h2>
             </div>
-            <div class="news-content">
-                <?php
-                if (have_posts()) :
-                    while (have_posts()) :
-                        the_post();
-                        ?>
-                <article class="news-item">
-                    <div class="news-thumbnail">
-                        <?php if (has_post_thumbnail()) : ?>
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail('medium'); ?>
-                        </a>
-                        <?php endif; ?>
+            <div class="news-swiper swiper">
+                <div class="swiper-wrapper">
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <div class="swiper-slide">
+                        <article class="news-item">
+                            <div class="news-thumbnail">
+                                <?php if (has_post_thumbnail()) : ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </a>
+                                <?php endif; ?>
+                            </div>
+                            <div class="news-meta">
+                                <span class="news-category">
+                                    <?php
+                $categories = get_the_category();
+                if (!empty($categories)) {
+                  echo esc_html($categories[0]->name);
+                }
+              ?>
+                                </span>
+                                <time class="news-date" datetime="<?php echo get_the_date('c'); ?>">
+                                    <?php echo get_the_date('Y.m.d'); ?>
+                                </time>
+                            </div>
+                            <h3 class="news-title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
+                        </article>
                     </div>
-                    <div class="news-meta">
-                        <span class="news-category">
-                            <?php
-                                    $categories = get_the_category();
-                                    if (!empty($categories)) {
-                                        echo esc_html($categories[0]->name);
-                                    }
-                                    ?>
-                        </span>
-                        <time class="news-date" datetime="<?php echo get_the_date('c'); ?>">
-                            <?php echo get_the_date('Y.m.d'); ?>
-                        </time>
-                    </div>
-                    <h3 class="news-title">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </h3>
-                </article>
-                <?php
-                    endwhile;
-                    the_posts_navigation();
-                else :
-                    echo '<p class="no-news">お知らせはありません。</p>';
-                endif;
-                ?>
+                    <?php endwhile; else : ?>
+                    <p class="no-news">お知らせはありません。</p>
+                    <?php endif; ?>
+                </div>
+
+                <!-- ナビゲーション（任意） -->
+                <div class="swiper-button-prev news-swiper-prev"></div>
+                <div class="swiper-button-next news-swiper-next"></div>
             </div>
         </div>
     </section>

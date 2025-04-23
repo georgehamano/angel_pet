@@ -35,7 +35,7 @@
   z-index: $z-index-menu-toggle;
   padding: 0;
 
-  @include respond-to("mobile") {
+  @include respond-to("tablet") {
     display: none;
   }
 
@@ -66,7 +66,7 @@
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease;
 
-  @include respond-to("mobile") {
+  @include respond-to("tablet") {
     position: static;
     width: auto;
     height: auto;
@@ -78,7 +78,7 @@
   &.is-open {
     right: 0;
 
-    @include respond-to("mobile") {
+    @include respond-to("tablet") {
       right: auto;
     }
   }
@@ -97,7 +97,7 @@
   li {
     margin-bottom: $spacing-unit;
 
-    @include respond-to("mobile") {
+    @include respond-to("tablet") {
       opacity: 1;
       transform: none;
     }

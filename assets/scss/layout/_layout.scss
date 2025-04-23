@@ -3,7 +3,7 @@
   position: relative;
   transition: transform 0.3s ease;
 
-  @include respond-to("mobile") {
+  @include respond-to("tablet") {
     margin-left: $sidebar-width;
     margin-right: 0;
     transform: none;
@@ -13,7 +13,7 @@
 #site-navigation.is-open + #page {
   transform: translateX(-80%);
 
-  @include respond-to("mobile") {
+  @include respond-to("tablet") {
     transform: none;
   }
 }
