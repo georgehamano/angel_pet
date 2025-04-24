@@ -45,48 +45,97 @@ get_header();
     <section class="news-section">
         <div class="news-container">
             <div class="news-header">
-                <h2 class="vertical-title">お知らせ</h2>
+                <h2 class="vertical-title sub-title">お知らせ</h2>
+                <div class="main-button news-button-pc">
+                    <a href="<?php echo home_url('/news'); ?>" class="button">すべてのお知らせ<br><span>ALL NEWS</span></a>
+                </div>
             </div>
-            <div class="news-swiper swiper">
-                <div class="swiper-wrapper">
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <div class="swiper-slide">
-                        <article class="news-item">
-                            <div class="news-thumbnail">
-                                <?php if (has_post_thumbnail()) : ?>
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('medium'); ?>
-                                </a>
-                                <?php endif; ?>
-                            </div>
-                            <div class="news-meta">
-                                <span class="news-category">
-                                    <?php
-                $categories = get_the_category();
-                if (!empty($categories)) {
-                  echo esc_html($categories[0]->name);
-                }
+            <div class="news-scroll-wrapper">
+                <div class="news-scroll">
+                    <?php
+    $index = 0;
+    $news_query = new WP_Query([
+      'posts_per_page' => 5,
+      'post_type' => 'post',
+      'orderby' => 'date',
+      'order' => 'DESC',
+    ]);
+
+    if ($news_query->have_posts()) :
+      while ($news_query->have_posts()) : $news_query->the_post(); ?>
+                    <article class="news-item" data-index="<?php echo $index++; ?>">
+                        <div class="news-thumbnail">
+                            <?php if (has_post_thumbnail()) : ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php
+                $image_id = get_post_thumbnail_id();
+                $image_src = wp_get_attachment_image_src($image_id, 'medium');
+                ?>
+                                <img src="<?php echo esc_url($image_src[0]); ?>"
+                                    alt="<?php the_title_attribute(); ?>" />
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="news-meta">
+                            <span class="news-category">
+                                <?php
+              $categories = get_the_category();
+              if (!empty($categories)) {
+                echo esc_html($categories[0]->name);
+              }
               ?>
-                                </span>
-                                <time class="news-date" datetime="<?php echo get_the_date('c'); ?>">
-                                    <?php echo get_the_date('Y.m.d'); ?>
-                                </time>
-                            </div>
-                            <h3 class="news-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h3>
-                        </article>
-                    </div>
-                    <?php endwhile; else : ?>
-                    <p class="no-news">お知らせはありません。</p>
-                    <?php endif; ?>
+                            </span>
+                            <time class="news-date" datetime="<?php echo get_the_date('c'); ?>">
+                                <?php echo get_the_date('Y.m.d'); ?>
+                            </time>
+                        </div>
+                        <h3 class="news-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h3>
+                    </article>
+                    <?php endwhile; wp_reset_postdata(); endif; ?>
                 </div>
 
-                <!-- ナビゲーション（任意） -->
-                <div class="swiper-button-prev news-swiper-prev"></div>
-                <div class="swiper-button-next news-swiper-next"></div>
+
+            </div>
+
+        </div>
+        <div class="news-dots"></div>
+        <div class="main-button news-button-sp">
+            <a href="<?php echo home_url('/#'); ?>" class="button">すべてのお知らせ<br><span>ALL NEWS</span></a>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h3 class="vertical-secondary-title">
+                    <sapn>緑豊かな</sapn>
+                    <span>動物たちのやすらぎの杜</span>
+                </h3>
+                <h2 class="vertical-title sub-title">霊園について</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-content-text">
+                    <p>豊かな緑に抱かれ、<br>
+                        静かに時が流れるやすらぎの杜。<br>
+                        エンジェルペット霊園は、<br>
+                        大切な家族として<br>
+                        ともに歩んできたペットたちが、<br>
+                        安らかに眠る場所です。 <br>
+                        愛する存在を偲びながら、<br>
+                        お参りできますように、<br>
+                        心を込めた供養の場として、<br>
+                        静寂と温もりに満ちた空間を<br>
+                        ご用意しております。</p>
+                </div>
             </div>
         </div>
+        <div class="main-button">
+            <a href="<?php echo home_url('/#'); ?>" class="button">霊園について<br><span>ABOUT</span></a>
+        </div>
+
+        </div>
+
     </section>
 </main><!-- #main -->
 
