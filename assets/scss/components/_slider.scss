@@ -1,6 +1,8 @@
+// ◼ ここから「活きてる使うスッキリバージョン」
+
 .mv-slider-section {
   display: flex;
-  width: 102%;
+  width: 100%;
   position: relative;
   height: calc(100vh - 80px);
   align-items: flex-start;
@@ -8,7 +10,7 @@
 
   @include respond-to("tablet") {
     align-items: normal;
-    margin-top: 0px;
+    margin-top: 0;
     height: 100vh;
   }
 }
@@ -19,71 +21,87 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: #878787;
-  font-size: 0.8rem;
   writing-mode: vertical-rl;
+  height: 100%;
+  padding-top: 5px;
 
-  @include respond-to("tablet") {
+  p {
+    font-family: "Noto Serif JP", serif !important;
+    font-size: 12px;
+  }
+
+  .vertical-text {
     position: absolute;
-    display: block;
-    z-index: 1001;
 
-    .vertical-text {
-      position: absolute;
+    @include respond-to("tablet") {
+      z-index: 1001;
       left: -50px;
-      top: 30px;
+      top: 35px;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 0.5px;
+        height: 30px;
+        background-color: #949494;
+        position: absolute;
+        top: -40px;
+        left: 7px;
+      }
+    }
+    span{
+      
+     
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 0.5px;
+        height: 15px;
+        margin: 15px 0;
+        background-color: #949494;
+      }
+
+      @include respond-to("tablet") {
+      display:none;
+      }
     }
 
-    .vertical-text:before {
-      content: "";
+   
+  }
+
+  .side-text {
+    display: none;
+    
+
+    @include respond-to("tablet") {
+      position: absolute;
       display: block;
-      width: 0.5px;
-      height: 30px;
-      background-color: #515151;
-      position: absolute;
-      top: -33px;
-      left: 7px;
-    }
-
-    .side-text {
-      position: absolute;
+      z-index: 1001;
+      font-size: 14px;
       writing-mode: horizontal-tb;
       top: -35px;
-      left: 100px;
+      left: -50px;
       width: 200px;
     }
 
+    &::before {
+      content: "";
+      display: block;
+      width: 0.5px;
+      height: 25px;
+      background-color: #515151;
+      position: absolute;
+      top: -40px;
+      left: 7px;
+
+      @include respond-to("tablet") {
+        display: none;
+      }
+    }
   }
-}
-
-.mv-slider-text .vertical-text {
-  margin: 0;
-  padding: 0;
-  height: 160px;
-  font-family: "Noto Serif JP", serif !important;
-}
-
-.mv-slider-text .side-text {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  font-family: "Noto Serif JP", serif !important;
-}
-
-.mv-slider-text .side-text:before {
-  content: "";
-  display: block;
-  width: 0.5px;
-  height: 30px;
-  background-color: #515151;
-  position: absolute;
-  top: -33px;
-  left: 7px;
-
-  @include respond-to("tablet") {
-    display: none;
-  }
+ 
 }
 
 .mv-slider {
@@ -91,114 +109,84 @@
   height: calc(100vh - 80px);
   overflow: hidden;
   position: relative;
-  margin: 0;
-  padding: 0;
-  padding-right: 0px;
-  padding-top: 0px;
   flex-shrink: 0;
 
   @include respond-to("tablet") {
     width: 100%;
     padding-right: 50px;
     height: 100%;
-    padding-top: 0px;
   }
-}
 
-.mv-slider .mv-slider-text {
-  position: absolute;
-  left: -39px;
-  z-index: 99999;
-}
+  .mv-slider01,
+  .mv-slider02 {
+    width: 100%;
+    height: calc(100% - 80px);
+    overflow: hidden;
+    position: relative;
 
-.mv-slider .mv-slider-text p {
-  font-family: "Noto Serif JP", serif !important;
-}
-
-.mv-slider .mv-slider01,
-.mv-slider .mv-slider02 {
-  width: 100%;
-  height: calc(100% - 80px);
-  overflow: hidden;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 0px;
-  @include respond-to("tablet") {
-    padding-bottom: 80px;
+    @include respond-to("tablet") {
+      padding-bottom: 80px;
+    }
   }
-}
 
-.mv-slider .slider-item {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .slider-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.mv-slider .slider-item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 100%;
-}
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-width: 100%;
+    }
 
-.mv-slider .slider-item h2 {
-  position: absolute;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    h2 {
+      position: absolute;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
 
-  @include respond-to("tablet") {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+      &::before, &::after {
+        content: "";
+        display: block;
+        width: 0.5px;
+        height: 30px;
+        background-color: #fff;
+        position: absolute;
+      }
+
+      &::before {
+        top: -70px;
+        right: 10px;
+      }
+
+      &::after {
+        bottom: -50px;
+        left: 10px;
+      }
+
+      span:first-child {
+        display: inline-block;
+        margin-top: -30px;
+      }
+
+      span:last-child {
+        display: inline-block;
+      }
+    }
   }
-}
-
-.mv-slider .slider-item h2::before {
-  content: "";
-  display: block;
-  width: 0.5px;
-  height: 50px;
-  background-color: #fff;
-  position: absolute;
-  top: -120px;
-  right: 12px;
-}
-
-.mv-slider .slider-item h2::after {
-  content: "";
-  display: block;
-  width: 0.5px;
-  height: 50px;
-  background-color: #fff;
-  position: absolute;
-  bottom: -60px;
-  left: 15px;
-}
-
-.mv-slider .slider-item h2 span:first-child {
-  display: inline-block;
-  margin-top: -30px;
-}
-
-.mv-slider .slider-item h2 span:last-child {
-  display: inline-block;
-  margin-top: 50px;
 }

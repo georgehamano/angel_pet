@@ -8,7 +8,7 @@
   bottom: 0;
   z-index: 2;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   @include respond-to("tablet") {
     justify-content: flex-start;
@@ -42,7 +42,6 @@
 
   @include respond-to("tablet") {
     padding: 40px 0;
-    max-width: 1250px;
     width: 100%;
     margin: 0 auto 100px auto;
       
@@ -59,27 +58,47 @@
     padding: 0 ;
     display: grid;
     grid-auto-flow: column;
-    gap: 20px;
     overflow: hidden;
     padding-right: 0px;
 
     @include respond-to("tablet") {
-      padding-right: 30px;
+      display: flex;
+      padding-right: 50px;
+      gap: 20px;
+    }
+    .side-header {
+      width: 60px;
+  
+      @include respond-to("tablet") {
+        text-align: center;
+        position: relative;
+        flex:2;
+      }
+      @include respond-to("desktop") {
+        flex:2;
+      }
+      .sub-title::after{
+        left: 27px;
+        bottom: -27px;
+        @include respond-to("tablet") {
+          left: 33px;
+          bottom: -40px;
+        }
+      }
+      .sub-title::before{
+        content: "NEWS";
+        left: 20px;
+        bottom: -80px;
+        @include respond-to("tablet") {
+          left: 27px;
+          bottom: -100px;
+        }
+
+      }
     }
   }
 
-  .news-header {
-    width: 60px;
-
-    @include respond-to("tablet") {
-      width: 280px;
-      text-align: center;
-      position: relative;
-    }
-    .sub-title::before{
-      content: "NEWS";
-    }
-  }
+  
 
   .news-scroll-wrapper {
     overflow-x: auto;
@@ -90,6 +109,9 @@
   
     &::-webkit-scrollbar {
       display: none;
+    }
+    @include respond-to("tablet") {
+      flex:6;
     }
   }
   
@@ -202,7 +224,7 @@
 }
 .news-button-pc {
   display: none;
-  @include respond-to("tablet") {
+  @include respond-to("desktop") {
     display: block;
     bottom:0;
     left: 50%;           // 横の中央起点に配置
@@ -211,7 +233,8 @@
 }
 .news-button-sp {
   display: block;
-  @include respond-to("tablet") {
+  position: relative;
+  @include respond-to("desktop") {
     display: none;
   }
 }
@@ -223,8 +246,8 @@
   width: 100%;
   
   @include respond-to("tablet") {
-    max-width:1250px;
-    margin: 0 auto;
+    margin: 0 ;
+    padding-right: 50px;
     width: 100%;
   }
   .main-button{
@@ -241,6 +264,7 @@
   .main-button a,{
     color: #fff;
     border: 0.5px solid #fff;
+    background-color: #ffffff2b;
 
     &::before{
       background-color: #fff;
@@ -265,10 +289,10 @@
     &::before{
       content: "";
       position: absolute;
-    top: -15%;
-    right: 0;
-    width: 300px;
-    height: 200px;
+      top: -15%;
+      right: 0;
+      width: 300px;
+      height: 200px;
       display: block;
       background-image: url(./images/about-topimg1.jpg);
       background-size: cover;
@@ -290,9 +314,13 @@
     top: -5%;
 
     @include respond-to("tablet") {
-     right: 100px; 
+     right: 5px; 
      top: 0;
     }
+    @include respond-to("desktop") {
+      right: 100px; 
+      top: 0;
+     }
     
     .vertical-title{
       padding-right: 10px;
@@ -300,6 +328,9 @@
       @include respond-to("tablet") {
         font-size: 1rem;
       }
+      @include respond-to("desktop") {
+        font-size: 1.2rem;
+       }
     }
     .vertical-secondary-title{
       writing-mode: vertical-rl;
@@ -322,18 +353,37 @@
         }
       }
       @include respond-to("tablet") {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
       }
+      @include respond-to("desktop") {
+        font-size: 1.5rem;
+       }
     }
     .sub-title::after{
       background-color: #fff;
-      top: 130px;
-      left: 55%;
+      top: 125px;
+      left: 27px;
+      @include respond-to("tablet") {
+        top: 125px;
+        left: 27px;
+      }
+      @include respond-to("desktop") {
+        top: 145px;
+        left: 30px;
+      }
     }
     .sub-title::before{
       content: "ABOUT";
-      top: 150px;
-      left:45%;
+      top: 160px;
+      left:21px;
+      @include respond-to("tablet") {
+        top: 160px;
+        left: 21px;
+      }
+      @include respond-to("desktop") {
+        top: 175px;
+        left: 24px;
+      }
     }
     h2,h3,p,a{
       color: #fff!important;
@@ -350,7 +400,18 @@
       writing-mode: vertical-rl;
       text-orientation: upright;
       position:absolute;
-      left: 55%;           // 横の中央起点に配置
+      left: 40%;           // 横の中央起点に配置
+      transform: translate(-50%, -50%); // 中心にぴったり合わせる
+      top: 50%;
+      height: 350px;
+      letter-spacing: .2rem;
+      padding:0;
+    }
+    @include respond-to("desktop") {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      position:absolute;
+      left: 50%;           // 横の中央起点に配置
       transform: translate(-50%, -50%); // 中心にぴったり合わせる
       top: 50%;
       height: 350px;
@@ -364,8 +425,442 @@
     font-weight: 300;
     line-height: 2;
     @include respond-to("tablet") {
-      font-size: 1.1rem;
-      line-height: 2.5;
+      
+      line-height: 2;
+  }
+  @include respond-to("desktop") {
+    font-size: 1rem;
   }
 }
+}
+//火葬
+.service-section-pet{
+  .sub-title::after{
+    left:27px;
+    bottom: -33px;
+    @include respond-to("tablet") {
+      left: 33px;
+      bottom: -33px;
+    }
+    @include respond-to("desktop") {
+      left: 33px;
+      bottom: -40px;
+    }
+  }
+  .sub-title::before{
+    content: "Pet Cremation";
+    bottom: -160px;
+    left:20px;
+    
+    @include respond-to("tablet") {
+      left: 27px;
+      bottom: -175px;
+    }
+    @include respond-to("desktop") {
+      left: 27px;
+      bottom: -180px;
+    }
+  }
+  .service-content{
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+
+    @include respond-to("tablet") {
+    flex:8;
+    }
+    @include respond-to("desktop") {
+      display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0;
+    flex:8;
+    }
+    
+  }
+  h3{
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-left: 0.5px solid #333;
+    padding-left: 15px;
+
+    @include respond-to("tablet") {
+      font-size: 1.5rem;
+      border: none;
+      padding:0;
+    }
+  }
+  .service-content-image {
+    width: 100%;
+    aspect-ratio: 10 / 9; 
+    max-width: 100%;
+    overflow: hidden;
+    @include respond-to("tablet") {
+      aspect-ratio: 16 / 9;
+    }
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .service-content-text{
+    margin-top: 35px;
+    margin-left: -30px;
+    position: relative;
+   
+    @include respond-to("tablet") {
+      margin-left: 0;
+    }
+    p{
+      margin: 30px 0;
+      width: 95%;
+    }
+    
+  }
+  .service-content-list {
+    margin: 50px auto;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 30px;
+    list-style: none;
+    text-align: center;
+    counter-reset: item;
+    padding:0 20px;
+
+    @include respond-to("tablet") {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 180px));
+      justify-content: space-evenly;
+      gap:20px 0;
+      padding: 0;
+    }
+    @include respond-to("desktop") {
+      margin-left: auto;
+      margin-right: 0;
+      margin-top:200px;
+      justify-content: space-between;
+      max-width: 1250px;
+    }
+
+    li{
+      font-size: 1.1rem;
+      font-weight: 300;
+      border: 0.5px solid #333;
+      padding: 30px;
+      position: relative;
+      counter-increment: item;
+
+      @include respond-to("tablet") {
+        aspect-ratio: 1 / 1;
+        font-size: 1rem;
+        display: flex;
+         justify-content: center; /* 横方向中央 */
+         align-items: center;
+         flex-direction: column;
+
+        span{
+          display: block;
+        }
+        .service-content-list-text{
+          font-size: 0.8rem;
+        }
+      }
+
+      &::before{
+        content: "Plan";
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        top: -15px;
+        left: 25px;
+        padding: 0 5px;
+        font-size: 1rem;
+        color: $color-text-lighter;
+      }
+      &::after{
+        content: counter(item);
+        display: block;
+        background-color: #fff;
+        position: absolute;
+        top: -20px;
+        left: 65px;
+        padding: 0 5px;
+        font-size: 1.3rem;
+        color: $color-secondary;
+      }
+    }
+}
+.main-button{
+  margin-top: 50px;
+  position: relative;
+
+  @include respond-to("tablet") {
+    margin-top: 100px;
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+}
+//納骨堂・墓地
+.service-section-cemetery{
+  .side-header{
+    width: 60px;
+    @include respond-to("tablet") {
+      text-align: center;
+      position: relative;
+      flex:2;
+    }
+  }
+  .sub-title::after{
+    left: 27px;
+    bottom: -35px;
+    @include respond-to("tablet") {
+    left: 33px;
+    bottom: -33px;
+    }
+    @include respond-to("desktop") {
+      left: 33px;
+    bottom: -40px;
+    }
+  }
+  .sub-title::before{
+    content: "Columbarium & Cemetery";
+    bottom: -240px;
+    left:20px;
+
+    @include respond-to("tablet") {
+      bottom: -270px;
+      left: 27px;
+    }
+    @include respond-to("desktop") {
+      bottom: -280px;
+    }
+  }
+.service-content-wrapper{
+  max-width: 1250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include respond-to("tablet") {
+    flex:8;
+  }
+  @include respond-to("desktop") {
+    flex-direction: row;
+    
+  }
+
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      transition: background-color 0.5s ease;
+    }
+    &:hover::before {
+      background-color: rgba(0, 0, 0, 0.3);
+      transition: 0.5s;
+    }
+  @include respond-to("desktop") {
+    flex:4;
+    
+  }
+}
+  .service-content-columbarium{
+    background-image: url(./images/cemetery-topimg1.jpg);
+    }
+  
+  .service-content-cemetery{
+    background-image: url(./images/cemetery-topimg2.jpg);
+    }
+  
+  .service-content-text{
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 0.5px solid #fff;
+    padding: 2rem;
+    width: 85%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: 0.5px;
+      height: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -5%;
+      background: #fff;
+      transition: 0.5s;
+    }
+    &:hover::after {
+      transition: 0.5s;
+      height:10%;
+      bottom:-8%
+    }
+    @include respond-to("tablet") {
+      width: 85%;
+      height: 85%;
+    }
+    @include respond-to("desktop") {
+      width: 85%;
+      height: 85%;
+    }
+    h3{
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: .3rem;
+    }
+    span{
+      display: block;
+      font-size: .8rem;
+      margin-top: 0px;
+      font-weight: 300;
+      letter-spacing: .1rem;
+    }
+    p{
+      font-size:0.8rem;
+    }
+  }
+}
+}
+//法事・行事
+.service-section-memorial,.service-section-goods{
+  margin-top: 100px;
+
+  .side-header{
+    width: 60px;
+    @include respond-to("tablet") {
+      text-align: center;
+      position: relative;
+      flex:2;
+    }
+
+    .sub-title::after{
+      left:27px;
+      bottom: -30px;
+      @include respond-to("tablet") {
+        left: 33px;
+        bottom: -35px;
+      }
+    }
+    .sub-title::before{
+      content: "Memorial events";
+      bottom: -170px;
+      left:20px;
+      @include respond-to("tablet") {
+        left: 26px;
+        bottom: -200px;
+      }
+    }
+  }
+  .service-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: flex-start;
+    @include respond-to("tablet") {
+      flex:8;
+    }
+    @include respond-to("desktop") {
+      flex-direction: row;
+      flex:8;
+    }
+    .service-content-image{
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @include respond-to("tablet") {
+        flex: 5;
+      }
+    }
+    .service-content-text{
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      padding-left:0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: left;
+      h3{
+        font-size: 1rem;
+        color: #333;
+        letter-spacing: .3rem;
+        margin-bottom: 20px;
+        @include respond-to("tablet") {
+          font-size: 1.1rem;
+        }
+        @include respond-to("desktop") {
+          font-size: 1.5rem;
+        }
+      }
+      @include respond-to("desktop") {
+        flex: 5;
+        padding: 0 40px;
+      }
+    }
+    .main-button{
+      margin: 50px auto;
+      position: relative;
+      @include respond-to("tablet") {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+}
+//メモリアルグッツ
+.service-section-goods{
+  .service-container{
+    .service-content{
+      @include respond-to("tablet") {
+        flex-direction: row-reverse;
+      }
+    }
+  }
 }

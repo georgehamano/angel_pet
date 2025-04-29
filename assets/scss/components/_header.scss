@@ -19,16 +19,20 @@
 
 .site-branding {
   display: block;
-  margin-bottom: 2rem;
   text-align: left;
+  padding: 15px 0 15px 18px;
+  @include respond-to("tablet") {
+    padding: 0;
+  }
+
 
   .custom-logo-link {
     display: block;
     max-width: 200px;
-    margin: 15px 0 15px 18px;
 
     @include respond-to("tablet") {
       margin: 0 auto;
+      padding: 0;
     }
   }
 

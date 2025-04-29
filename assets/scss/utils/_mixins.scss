@@ -1,6 +1,11 @@
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "tablet" {
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "desktop" {
+    @media screen and (min-width: 1024px) {
       @content;
     }
   }
@@ -22,27 +27,22 @@
 
   &::before{
     display: block;
-    margin-top: 10px;
     font-size: .6rem;
     writing-mode: sideways-rl;
     position: absolute;
-    bottom: -110%;
-    left: 50%;
+
   }
 
   &::after {
     content: "";
     position: absolute;
-    bottom: -50%;
-    left: 62%;
-    transform: translateX(-50%);
     width: 0.5px;
     height: 20px;
-    background-color: $color-text;
+    background-color: $color-text-lightest;
+    @include respond-to("tablet") {
+      font-size: 1.5rem;
   }
-  @include respond-to("tablet") {
-        font-size: 1.5rem;
-    }
+  }
   }
 
 
@@ -59,3 +59,4 @@
     transform: translateY(-5px);
   }
 } 
+

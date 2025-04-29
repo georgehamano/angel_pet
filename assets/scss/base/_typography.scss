@@ -9,8 +9,15 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-serif;
   color: $color-text;
+  font-weight: 300;
 }
-
+body{
+  color: $color-text;
+}
+p{
+  font-weight: 300;
+  font-size: .9rem;
+}
 a {
   color: $color-text;
   text-decoration: none;

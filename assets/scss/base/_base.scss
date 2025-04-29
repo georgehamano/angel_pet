@@ -10,6 +10,12 @@
     margin: 0 auto;
     display: block;
     width: 250px;
+    transition: 0.5s ;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transition: 0.5s;
+    }
 
     a {
         font-family: $font-serif;
@@ -27,6 +33,11 @@
             width: 60px;
             height: 0.5px;
             background-color: $color-border;
+            transition: 0.5s ;
+        }
+        &:hover::before {
+          transition: 0.5s;
+          left: -40px;
         }
     }
     span {
@@ -35,7 +46,30 @@
     }
     @include respond-to("tablet") {
         position: absolute;
-        width: 220px;
     }
   }
-  
+  //サービス
+  .service-section {
+    margin: 50px auto;
+    width: 100%;
+
+    @include respond-to("tablet") {
+        margin: 80px 0;
+        padding-right: 50px;
+    }
+    @include respond-to("desktop") {
+      margin: 150px 0;
+      padding-right: 50px;
+  }
+
+    .service-container{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      
+    }
+  }
+  .side-header{
+    width: 60px;
+  }
