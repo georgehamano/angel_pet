@@ -88,10 +88,10 @@
       .sub-title::before{
         content: "NEWS";
         left: 20px;
-        bottom: -80px;
+        bottom: -65px;
         @include respond-to("tablet") {
           left: 27px;
-          bottom: -100px;
+          bottom: -80px;
         }
 
       }
@@ -374,14 +374,14 @@
     }
     .sub-title::before{
       content: "ABOUT";
-      top: 160px;
+      top: 155px;
       left:21px;
       @include respond-to("tablet") {
-        top: 160px;
+        top: 155px;
         left: 21px;
       }
       @include respond-to("desktop") {
-        top: 175px;
+        top: 155px;
         left: 24px;
       }
     }
@@ -435,6 +435,14 @@
 }
 //火葬
 .service-section-pet{
+  .side-header{
+    width: 60px;
+    @include respond-to("tablet") {
+      text-align: center;
+      position: relative;
+      flex:2;
+    }
+  }
   .sub-title::after{
     left:27px;
     bottom: -33px;
@@ -449,16 +457,16 @@
   }
   .sub-title::before{
     content: "Pet Cremation";
-    bottom: -160px;
+    bottom: -110px;
     left:20px;
     
     @include respond-to("tablet") {
       left: 27px;
-      bottom: -175px;
+      bottom: -110px;
     }
     @include respond-to("desktop") {
       left: 27px;
-      bottom: -180px;
+      bottom: -120px;
     }
   }
   .service-content{
@@ -638,15 +646,15 @@
   }
   .sub-title::before{
     content: "Columbarium & Cemetery";
-    bottom: -240px;
+    bottom: -170px;
     left:20px;
 
     @include respond-to("tablet") {
-      bottom: -270px;
+      bottom: -170px;
       left: 27px;
     }
     @include respond-to("desktop") {
-      bottom: -280px;
+      bottom: -170px;
     }
   }
 .service-content-wrapper{
@@ -780,17 +788,17 @@
       left:27px;
       bottom: -30px;
       @include respond-to("tablet") {
-        left: 33px;
+        left: 32px;
         bottom: -35px;
       }
     }
     .sub-title::before{
       content: "Memorial events";
-      bottom: -170px;
+      bottom: -120px;
       left:20px;
       @include respond-to("tablet") {
         left: 26px;
-        bottom: -200px;
+        bottom: -120px;
       }
     }
   }
@@ -799,7 +807,9 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    align-items: flex-start;
+    align-items: stretch;
+    
+
     @include respond-to("tablet") {
       flex:8;
     }
@@ -857,9 +867,15 @@
 //メモリアルグッツ
 .service-section-goods{
   .service-container{
+    
     .service-content{
       @include respond-to("tablet") {
         flex-direction: row-reverse;
+      }
+    }
+    .sub-title{
+      @include respond-to("tablet") {
+       content: "Memorial goods";
       }
     }
   }

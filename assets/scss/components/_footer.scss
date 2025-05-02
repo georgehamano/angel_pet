@@ -1,0 +1,322 @@
+.site-footer{
+    background-color: #F9F9F9;
+    padding-top: 100px;
+
+    @include respond-to("tablet") {
+        margin: 150px 0 0 0;
+        padding-right: 50px;
+    }
+}
+.access-section{
+
+  .sub-title{
+
+    &::after{
+     left: 27px;
+     bottom: -33px;
+     @include respond-to("tablet") {
+      left: 33px;
+      bottom: -33px;
+     }
+    }
+    &::before{
+      content: "Access";
+      bottom: -120px;
+      left: 20px;
+      @include respond-to("tablet") {
+        bottom: -75px;
+        left: 28px;
+      }
+    }
+  }
+
+  .access-container{
+    display: flex;
+   
+    width: 100%;
+    @include respond-to("tablet") {
+    flex-wrap: wrap;
+      flex-direction: row;
+      padding-bottom: 15px;
+    }
+  }
+  .access-header{
+    width: 60px;
+    flex: 0 0 60px;
+    @include respond-to("tablet") {
+      text-align: center;
+      flex: 2;
+    }
+  }
+  .access-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+
+    div{
+        margin: 0px 10px 30px 10px;
+    }
+
+    @include respond-to("tablet") {
+      flex: 8;
+      display: grid;
+      grid-template-columns:repeat(2, 1fr); // タブレットでは2列
+      gap: 20px;
+      grid-template-areas:
+      "item1 item1"
+      "item2 item3"
+      "item4 item4"
+      "item5 item5";
+    }
+    @include respond-to("desktop") {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        "item1 item2 item3"
+        "item4 item4 item4"
+        "item5 item5 item5";
+    }
+    h3{
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 15px;
+    }
+    .access-content-text{
+        grid-area: item1;
+        span{
+            font-size: 0.8rem;
+        }
+        ul{
+            margin-top: 10px;
+        }
+       li{
+        margin-bottom: 5px;
+       }
+    }
+    li{
+        font-family: $font-sans;
+        list-style: none;
+        font-size: 0.9rem;
+    }
+    a{
+        display: inline;
+    }
+    .access-content-route{
+        border: 0.5px solid $color-secondary;
+        padding: 20px 10px;
+        position: relative;
+        top:15px;
+        h3{
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            background-color: #F9F9F9;
+            padding: 0 10px;
+            display: flex;
+        align-items: center;
+        }
+        ul{
+            margin-top: 10px;
+        }
+        li{
+            margin-bottom: 10px;
+        }
+    }
+    .route-title-car{
+        grid-area: item2;
+    
+    &::before{
+        content:"";
+        background: url(./images/icon-access-car.png) no-repeat center center;
+        background-size: contain;
+        margin-right: 10px;
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+    }
+}
+.route-title-bus{
+    grid-area: item3;
+&::before{
+    content:"";
+    background: url(./images/icon-access-bus.png) no-repeat center center;
+    background-size: contain;
+    margin-right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+}
+}
+
+}
+.access-content-message{
+    grid-area: item4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding:20px 10px;
+    background-color: #fff;
+    
+    @include respond-to("tablet") {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding:20px 20px;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap
+    }
+    & p:first-child{
+        color: #0D376E;
+        font-family: $font-serif;
+        font-size: 1rem;
+    }
+    & p:last-child{
+        font-family: $font-sans;
+        font-size: 0.7rem;
+        position: relative;
+
+        @include respond-to("desktop") {
+            &::before{
+                content:"";
+                background-color: $color-text-lightest;
+                width: 30px;
+                height: 0.5px;
+                margin-right: 10px;
+                position: absolute;
+                top: 50%;
+                left: -35px;
+            }
+        }
+       
+    }
+}
+.access-content-map{
+    display: block;
+    overflow: hidden;
+    grid-area: item5;
+    height: 100vh;
+    max-height: 350px;
+    @include respond-to("tablet") {
+        
+    }
+    iframe{
+        width: 100%;
+        height: calc(100% + 56px);
+    margin-top: -56px;
+    border: none;
+    }
+}
+}
+.footer-section{
+    padding: 50px 0;
+
+    .footer-container{
+        display: grid;
+        gap: 50px;
+       margin: 0 30px;
+       grid-template-columns: 1fr;
+    grid-template-areas:"footer2" "footer3" "footer1";
+
+
+        @include respond-to("tablet") {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "footer1 footer2 footer3";
+            justify-content: space-between;
+            justify-items: center;
+        }
+    }
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h2{
+            margin-bottom: 20px;
+            color: $color-text-lightest;
+            font-size: 1.3rem;
+        }
+        h2 img{
+            width:250px;
+        }
+        li{
+            line-height: 2;
+            font-size: 0.9rem;
+            font-family: $font-sans;
+            list-style: none;
+        }
+        a{
+            display: inline;
+        }
+        .footer-content-sns{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .menu{
+            padding-left: 20px;
+            border-left: solid 0.5px $color-text-lightest;
+            li{
+                margin-bottom: 10px;
+                line-height: 1.5;
+                a{
+                    padding:0;
+                }
+            }
+        }
+    }
+    .footer-content-1{
+        grid-area: footer1;
+    }
+    .footer-content-menu{
+        grid-area: footer2;
+    }
+    .footer-content-contact{
+        grid-area: footer3;
+        align-items: center;
+
+        .footer-content-contact-wrapper{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .main-button{
+            background-color: #fff;
+            position: relative;
+            margin:0;
+        }
+
+        a{
+            display: block;
+        }
+        @include respond-to("tablet") {
+            margin-left:auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            width: 100%;
+        }
+        .footer-content-contact-tel{
+            margin-top: 20px;
+            font-size: 0.9rem;
+            font-family: $font-serif;
+            color: $color-text-lightest;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            a{
+                color:$color-secondary;
+                font-weight: 600;
+                font-family: $font-serif;
+                font-size: 1.5rem;
+            }
+            
+        }
+    }
+}
+
