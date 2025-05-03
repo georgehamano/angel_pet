@@ -12,6 +12,12 @@
     width: 250px;
     transition: 0.5s ;
 
+    @include respond-to("tablet") {
+      width: 200px;
+    }
+    @include respond-to("desktop") {
+      width: 250px;
+    }
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
       transition: 0.5s;

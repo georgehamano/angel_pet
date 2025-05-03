@@ -1,11 +1,16 @@
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const scrollWrapper = document.querySelector('.news-scroll-wrapper');
     const scrollContainer = document.querySelector('.news-scroll');
-    const items = scrollContainer.querySelectorAll('.news-item');
     const dotContainer = document.querySelector('.news-dots');
   
-    if (!scrollWrapper || !items.length || !dotContainer) {
+    if (!scrollWrapper || !scrollContainer || !dotContainer) {
       console.log('⚠️ 必要な要素が見つかりません');
+      return;
+    }
+
+    const items = scrollContainer.querySelectorAll('.news-item');
+    if (!items.length) {
+      console.log('⚠️ ニュースアイテムが見つかりません');
       return;
     }
   

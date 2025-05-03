@@ -105,6 +105,16 @@ a:hover {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+@media screen and (min-width: 768px) {
+  .main-button {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-button {
+    width: 250px;
+  }
+}
 .main-button:hover {
   background-color: rgba(0, 0, 0, 0.05);
   -webkit-transition: 0.5s;
@@ -425,13 +435,15 @@ a:hover {
 }
 @media screen and (min-width: 768px) {
   #site-navigation {
-    position: static;
+    position: absolute;
     width: auto;
     height: auto;
     background: transparent;
     -webkit-box-shadow: none;
             box-shadow: none;
     padding: 0;
+    left: 0;
+    width: 200px;
   }
 }
 #site-navigation.is-open {
@@ -445,7 +457,14 @@ a:hover {
 
 .menu-container {
   margin-top: 2rem;
-  width: 100%;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 50px;
+  }
 }
 
 .menu {
@@ -496,7 +515,7 @@ a:hover {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    bottom: 80px;
+    bottom: 100px;
   }
 }
 .business-hours .business-hours-text {
@@ -563,6 +582,7 @@ a:hover {
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
+    overflow: hidden;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1108,6 +1128,7 @@ a:hover {
 @media screen and (min-width: 768px) {
   .service-section-pet .service-content-text {
     margin-left: 0;
+    padding: 0 40px;
   }
 }
 .service-section-pet .service-content-text p {
@@ -1132,6 +1153,7 @@ a:hover {
             justify-content: space-evenly;
     gap: 20px 0;
     padding: 0;
+    padding-left: 100px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1562,10 +1584,32 @@ a:hover {
             flex-direction: row-reverse;
   }
 }
-@media screen and (min-width: 768px) {
-  .service-section-goods .service-container .sub-title {
-    content: "Memorial goods";
-  }
+.service-section-goods .service-container .sub-title::before {
+  content: "Memorial goods";
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+.swiper-slide-active {
+  opacity: 1;
+}
+.swiper-slide-prev, .swiper-slide-next {
+  opacity: 0;
 }
 
 .mv-slider-section {
@@ -1708,7 +1752,7 @@ a:hover {
 @media screen and (min-width: 768px) {
   .mv-slider .mv-slider01,
   .mv-slider .mv-slider02 {
-    padding-bottom: 80px;
+    padding-bottom: 100px;
   }
 }
 .mv-slider .slider-item {
@@ -1798,7 +1842,7 @@ a:hover {
 }
 .access-section .sub-title::before {
   content: "Access";
-  bottom: -120px;
+  bottom: -75px;
   left: 20px;
 }
 @media screen and (min-width: 768px) {
@@ -2054,6 +2098,8 @@ a:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
     justify-items: center;
+    border-bottom: solid 0.5px #949494;
+    padding-bottom: 50px;
   }
 }
 .footer-section .footer-content {
@@ -2069,9 +2115,9 @@ a:hover {
           align-items: flex-start;
 }
 .footer-section .footer-content h2 {
-  margin-bottom: 20px;
   color: #949494;
   font-size: 1.3rem;
+  margin: 20px auto;
 }
 .footer-section .footer-content h2 img {
   width: 250px;
@@ -2112,9 +2158,23 @@ a:hover {
 }
 .footer-section .footer-content-1 {
   grid-area: footer1;
+  border-top: solid 0.5px #949494;
+  border-bottom: solid 0.5px #949494;
+  padding: 50px 0;
+}
+@media screen and (min-width: 768px) {
+  .footer-section .footer-content-1 {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+  }
 }
 .footer-section .footer-content-menu {
   grid-area: footer2;
+  width: 100%;
+}
+.footer-section .footer-content-menu h2 {
+  margin: 20px 0;
 }
 .footer-section .footer-content-contact {
   grid-area: footer3;
@@ -2158,6 +2218,9 @@ a:hover {
             align-items: flex-end;
     gap: 10px;
     width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 .footer-section .footer-content-contact .footer-content-contact-tel {
@@ -2182,6 +2245,74 @@ a:hover {
   font-weight: 600;
   font-family: "Noto Serif JP", serif;
   font-size: 1.5rem;
+}
+
+.footer-content-banner {
+  margin: 50px 30px;
+  border-bottom: solid 0.5px #949494;
+  padding-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+  .footer-content-banner {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer-content-banner {
+    margin: 50px 60px;
+  }
+}
+.footer-content-banner h2 {
+  margin: 50px 0;
+  font-size: 1rem;
+  font-family: "Noto Serif JP", serif;
+  position: relative;
+  padding-left: 40px;
+}
+.footer-content-banner h2::before {
+  content: "";
+  background-color: #515151;
+  width: 30px;
+  height: 0.5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.footer-content-banner .footer-content-banner-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+@media screen and (min-width: 768px) {
+  .footer-content-banner .footer-content-banner-item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.footer-content-banner .footer-content-banner-item img {
+  width: 260px;
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .footer-content-banner .footer-content-banner-item img {
+    width: 260px;
+    margin: 0;
+  }
 }
 
 .site-info {
@@ -2220,28 +2351,4 @@ a:hover {
     -webkit-transform: none;
             transform: none;
   }
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper-slide {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  -webkit-transition: opacity 1s ease;
-  transition: opacity 1s ease;
-}
-.swiper-slide-active {
-  opacity: 1;
-}
-.swiper-slide-prev, .swiper-slide-next {
-  opacity: 0;
 }/*# sourceMappingURL=style.css.map */

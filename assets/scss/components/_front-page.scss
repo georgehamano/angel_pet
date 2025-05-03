@@ -12,7 +12,7 @@
 
   @include respond-to("tablet") {
     justify-content: flex-start;
-    bottom: 80px;
+    bottom: 100px;
   }
 
   .business-hours-text {
@@ -73,6 +73,7 @@
         text-align: center;
         position: relative;
         flex:2;
+        overflow: hidden;
       }
       @include respond-to("desktop") {
         flex:2;
@@ -531,6 +532,7 @@
    
     @include respond-to("tablet") {
       margin-left: 0;
+      padding:0 40px;
     }
     p{
       margin: 30px 0;
@@ -553,6 +555,7 @@
       justify-content: space-evenly;
       gap:20px 0;
       padding: 0;
+      padding-left: 100px;
     }
     @include respond-to("desktop") {
       margin-left: auto;
@@ -873,10 +876,9 @@
         flex-direction: row-reverse;
       }
     }
-    .sub-title{
-      @include respond-to("tablet") {
+    .sub-title::before{
        content: "Memorial goods";
-      }
+      
     }
   }
 }

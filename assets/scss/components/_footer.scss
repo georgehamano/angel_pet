@@ -21,7 +21,7 @@
     }
     &::before{
       content: "Access";
-      bottom: -120px;
+      bottom: -75px;
       left: 20px;
       @include respond-to("tablet") {
         bottom: -75px;
@@ -240,6 +240,8 @@
             grid-template-areas: "footer1 footer2 footer3";
             justify-content: space-between;
             justify-items: center;
+            border-bottom: solid 0.5px $color-text-lightest;
+            padding-bottom: 50px;
         }
     }
     .footer-content{
@@ -248,9 +250,10 @@
         align-items: flex-start;
 
         h2{
-            margin-bottom: 20px;
+            
             color: $color-text-lightest;
             font-size: 1.3rem;
+            margin: 20px auto;
         }
         h2 img{
             width:250px;
@@ -274,6 +277,7 @@
         .menu{
             padding-left: 20px;
             border-left: solid 0.5px $color-text-lightest;
+          
             li{
                 margin-bottom: 10px;
                 line-height: 1.5;
@@ -285,9 +289,22 @@
     }
     .footer-content-1{
         grid-area: footer1;
+        border-top: solid 0.5px $color-text-lightest;
+        border-bottom: solid 0.5px $color-text-lightest;
+        padding: 50px 0;
+        @include respond-to("tablet") {
+            border-top: none;
+            border-bottom: none;
+            padding: 0;
+        }
     }
     .footer-content-menu{
         grid-area: footer2;
+        width: 100%;
+
+        h2{
+            margin:20px 0;
+        }
     }
     .footer-content-contact{
         grid-area: footer3;
@@ -315,6 +332,7 @@
             align-items: flex-end;
             gap: 10px;
             width: 100%;
+            justify-content: center;
         }
         .footer-content-contact-tel{
             margin-top: 20px;
@@ -332,6 +350,56 @@
                 font-size: 1.5rem;
             }
             
+        }
+    }
+}
+.footer-content-banner{
+    margin: 50px 30px;
+    border-bottom: solid 0.5px $color-text-lightest;
+    padding-bottom: 50px;
+    @include respond-to("tablet") {
+        border-top: none;
+        border-bottom: none;
+        padding: 0;
+    }
+   
+    @include respond-to("tablet") {
+        margin: 50px 60px;
+    }
+    h2{
+        margin:50px 0;
+        font-size:1rem;
+        font-family: $font-serif;
+        position: relative;
+        padding-left: 40px;
+        &::before{
+            content:"";
+            background-color: $color-text-light;
+            width: 30px;
+            height: 0.5px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+    }
+    .footer-content-banner-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+        @include respond-to("tablet") {
+            flex-direction: row;
+        }
+        img{
+            width: 260px;
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            @include respond-to("tablet") {
+                width: 260px;
+                margin:0;
+            }
         }
     }
 }

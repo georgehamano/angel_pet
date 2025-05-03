@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const slider01 = new Swiper('.mv-slider01', {
+  const sliderElement = document.querySelector('.mv-slider01');
+  if (!sliderElement) return;
+
+  const slides = sliderElement.querySelectorAll('.slider-item');
+  const config = {
     direction: 'vertical',
-    loop: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
@@ -15,5 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
     grabCursor: true,
     watchSlidesProgress: true,
     preventInteractionOnTransition: true
-  });
+  };
+
+  // スライドが2つ以上ある場合のみループを有効にする
+  if (slides.length >= 2) {
+    config.loop = true;
+  }
+
+  const slider01 = new Swiper('.mv-slider01', config);
 });

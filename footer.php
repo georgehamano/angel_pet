@@ -103,6 +103,14 @@
                 </div>
             </div>
         </div>
+        <div class="footer-content-banner">
+            <h2>関連施設のご案内</h2>
+            <div class="footer-content-banner-item">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/banner1.png" alt="エンジェルペット霊園">
+
+                <img src="<?php echo get_template_directory_uri(); ?>/images/banner2.png" alt="エンジェルペット霊園">
+            </div>
+        </div>
     </section>
     <div class="site-info">
         <a href="<?php echo esc_url( __( 'https://angelpet.jp/', 'angel_pet' ) ); ?>">

@@ -192,7 +192,8 @@ get_header();
             </div>
             <div class="service-content">
                 <div class="service-content-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/cremation-topimg1.jpg" alt="法事・行事">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/memorialevents-topimg1.jpg"
+                        alt="法事・行事">
                 </div>
                 <div class="service-content-text">
                     <h3>大切なペットを偲び、<br>

@@ -18,29 +18,3 @@
   }
 }
 
-// スライダーのアニメーション調整
-.swiper {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.swiper-slide {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 1s ease;
-
-  &-active {
-    opacity: 1;
-  }
-
-  &-prev,
-  &-next {
-    opacity: 0;
-  }
-} 
