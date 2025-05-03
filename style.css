@@ -1847,7 +1847,7 @@ a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 .access-section .access-content div {
   margin: 0px 10px 30px 10px;
@@ -1857,6 +1857,7 @@ a:hover {
     -webkit-box-flex: 8;
         -ms-flex: 8;
             flex: 8;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -1899,6 +1900,14 @@ a:hover {
   padding: 20px 10px;
   position: relative;
   top: 15px;
+  left: -40px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .access-section .access-content .access-content-route {
+    left: 0;
+    width: auto;
+  }
 }
 .access-section .access-content .access-content-route h3 {
   position: absolute;
@@ -1955,6 +1964,9 @@ a:hover {
   gap: 10px;
   padding: 20px 10px;
   background-color: #fff;
+  position: relative;
+  left: -40px;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .access-section .access-content-message {
@@ -1975,6 +1987,8 @@ a:hover {
             justify-content: space-evenly;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    left: 0;
+    width: auto;
   }
 }
 .access-section .access-content-message p:first-child {
@@ -2005,6 +2019,15 @@ a:hover {
   grid-area: item5;
   height: 100vh;
   max-height: 350px;
+  position: relative;
+  left: -40px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .access-section .access-content-map {
+    left: 0;
+    width: auto;
+  }
 }
 .access-section .access-content-map iframe {
   width: 100%;
@@ -2159,6 +2182,16 @@ a:hover {
   font-weight: 600;
   font-family: "Noto Serif JP", serif;
   font-size: 1.5rem;
+}
+
+.site-info {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #949494;
+  margin-top: 20px;
+}
+.site-info a {
+  font-family: "Noto Serif JP", serif;
 }
 
 #page {

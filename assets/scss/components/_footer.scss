@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 
     div{
         margin: 0px 10px 30px 10px;
@@ -60,6 +60,7 @@
 
     @include respond-to("tablet") {
       flex: 8;
+      overflow: hidden;
       display: grid;
       grid-template-columns:repeat(2, 1fr); // タブレットでは2列
       gap: 20px;
@@ -106,6 +107,12 @@
         padding: 20px 10px;
         position: relative;
         top:15px;
+        left: -40px;
+        width: 100%;
+        @include respond-to("tablet") {
+            left: 0;
+            width: auto;
+        }
         h3{
             position: absolute;
             top: -15px;
@@ -156,6 +163,9 @@
     gap: 10px;
     padding:20px 10px;
     background-color: #fff;
+    position: relative;
+    left: -40px;
+    width: 100%;
     
     @include respond-to("tablet") {
         display: flex;
@@ -164,7 +174,9 @@
         padding:20px 20px;
         align-items: center;
         justify-content: space-evenly;
-        flex-wrap: wrap
+        flex-wrap: wrap;
+        left: 0;
+        width: auto;
     }
     & p:first-child{
         color: #0D376E;
@@ -197,8 +209,12 @@
     grid-area: item5;
     height: 100vh;
     max-height: 350px;
+    position: relative;
+    left: -40px;
+    width: 100%;
     @include respond-to("tablet") {
-        
+        left: 0;
+        width: auto;
     }
     iframe{
         width: 100%;
@@ -317,6 +333,15 @@
             }
             
         }
+    }
+}
+.site-info{
+    text-align: center;
+    font-size: 0.8rem;
+    color: $color-text-lightest;
+    margin-top: 20px;
+    a{
+        font-family: $font-serif;
     }
 }
 
