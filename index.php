@@ -158,15 +158,16 @@ get_header();
             <li>ご葬儀プラン<span class="service-content-list-text">(僧侶による読経有)</span></li>
             <li>ご骨葬<span class="service-content-list-text">(僧侶による読経有)</span></li>
             <li>合同火葬プラン<span>+</span>合祀墓</li>
+            <div class="main-button">
+                <a href="<?php echo home_url('/#'); ?>" class="button">ペット火葬について<br><span>Pet Cremation</span></a>
+            </div>
         </ul>
-        <div class="main-button">
-            <a href="<?php echo home_url('/#'); ?>" class="button">ペット火葬について<br><span>Pet Cremation</span></a>
-        </div>
+
     </section>
     <section class="service-section service-section-cemetery">
         <div class="service-container">
             <div class="side-header">
-                <h2 class="vertical-title sub-title">納骨堂・墓地</h2>
+                <h2 class="vertical-title sub-title">施設紹介</h2>
             </div>
             <div class="service-content-wrapper">
                 <div class="service-content service-content-columbarium">
@@ -184,6 +185,11 @@ get_header();
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div class="main-button">
+            <a href="<?php echo home_url('/#'); ?>" class="button">施設紹介<br><span>Facility</span></a>
+        </div>
     </section>
     <section class="service-section service-section-memorial">
         <div class="service-container">
@@ -221,7 +227,7 @@ get_header();
                     <p>ご遺骨を納めるペンダントや写真立てをはじめ、さまざまなかたちで偲ぶための品々をご案内いたします。<br>
                         変わらぬ愛を込めたひとつひとつの品が、これからもご家族の心を温かくつないでいきますように。</p>
                     <div class="main-button">
-                        <a href="<?php echo home_url('/#'); ?>" class="button">メモリアルグッツを見る<br><span>Memorial
+                        <a href="<?php echo home_url('/#'); ?>" class="button">メモリアルグッツ<br><span>Memorial
                                 Goods</span></a>
                     </div>
                 </div>

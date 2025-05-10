@@ -45,7 +45,7 @@
     flex: 0 0 60px;
     @include respond-to("tablet") {
       text-align: center;
-      flex: 2;
+      flex: 1;
     }
   }
   .access-content{
@@ -59,7 +59,8 @@
     }
 
     @include respond-to("tablet") {
-      flex: 8;
+      padding-left:40px;
+      flex: 9;
       overflow: hidden;
       display: grid;
       grid-template-columns:repeat(2, 1fr); // タブレットでは2列

@@ -1,0 +1,371 @@
+.page {
+  .page-container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+  
+  @include respond-to("tablet") {
+    gap:40px;
+    padding: 0 50px 0 0;
+    margin-top: 0px;
+  }
+}
+.side-header{
+  width: 60px;
+  padding-top: 5px;
+  @include respond-to("tablet") {
+    text-align: center;
+    position: relative;
+    flex:1;
+  }
+}
+.page-content{
+  width: calc(100% - 60px);
+  @include respond-to("tablet") {
+    flex: 9;
+  }
+  h2{
+    writing-mode: horizontal-tb;
+    @include respond-to("tablet") {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      letter-spacing: 0.2em;
+      font-size: 1.3rem;
+    }
+  }
+}
+}
+// アバウトページ用のスタイル
+.about{
+
+  .sub-title::after{
+    left: 27px;
+      bottom: -33px;
+
+    @include respond-to("tablet") {
+      left: 33px;
+      bottom: -33px;
+    }
+  }
+    .sub-title::before{
+      content: "About";
+      left: 20px;
+        bottom: -75px;
+        
+      @include respond-to("tablet") {
+        left: 27px;
+        bottom: -75px;
+      }
+    }
+  
+    .page-thumbnail{
+      width: 100%;
+      aspect-ratio: 10 / 10; 
+      @include respond-to("tablet") {
+        aspect-ratio: 16 / 9;
+      }
+    
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+    .about-content-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 50px;
+      @include respond-to("tablet") {
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        margin-top: 100px;
+        height: 400px;
+      }
+
+      .about-content-text p{
+        font-family: $font-serif;
+        line-height: 2;
+        @include respond-to("tablet") {
+          writing-mode: vertical-rl;
+          text-orientation: upright;
+          letter-spacing: 0.2em;
+          font-size: 1rem;
+          
+          line-height: 2.5;
+        }
+      }
+    }
+    .about-overview{
+      margin: 80px 0;
+      
+     .side-header{
+     
+      .sub-title{
+        &::before{
+          content: "Overview";
+          bottom: -85px;
+        }
+        @include respond-to("tablet") {
+        }
+      }
+     }
+     .page-content{
+     
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      @include respond-to("tablet") {
+        grid-template-columns: 1fr 1fr;
+      }
+     }
+     .about-overview-content{
+      margin-bottom: 50px;
+      @include respond-to("tablet") {
+        margin-bottom: 0;
+      }
+     }
+     dl{
+      width: 100%;
+    padding: 0 5px;
+     }
+    .info-block {
+      display: grid;
+      grid-template-columns: 3fr 7fr;;
+      gap: 0em 1em;
+      padding: 1em;
+      margin-bottom: 0.5em;
+      @include respond-to("tablet") {
+        gap: 0.5em 2em;
+      }
+    }  
+    .info-block:nth-of-type(even) {
+      background-color: #f5f5f5;
+    }    
+    .about-overview-content a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    }
+}
+// 施設紹介ページ用のスタイル
+.facility{
+  .sub-title::after{
+    left: 27px;
+      bottom: -33px;
+      @include respond-to("tablet") {
+        left: 33px;
+      bottom: -33px;
+      }
+  }
+  .sub-title::before{
+    content: "Facility";
+    left: 20px;
+        bottom: -75px;
+      @include respond-to("tablet") {
+        left: 27px;
+        bottom: -75px;
+      }
+  }
+  .page-thumbnail{
+    width: 100%;
+    aspect-ratio: auto;
+    @include respond-to("tablet") {
+      aspect-ratio: 16 / 9;
+    }
+    img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+.side-header {
+  h2::after{
+    content: none;
+  }
+}
+.facility-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  @include respond-to("desktop") {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    > :nth-child(3) {
+      grid-column: 1 / -1; // ← 3つ目だけ下段100%に！
+    }
+  }
+}
+.facility-content-img{
+  width: 100%;
+  aspect-ratio: 10 / 10;
+  @include respond-to("tablet") {
+    aspect-ratio: 16 / 9;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.facility-content-text{
+  width: 100%;
+      height: 100%;
+      padding-left:0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: left;
+      margin-left:-35px;
+     
+      @include respond-to("tablet") {
+        margin-left: 0;
+      }
+      @include respond-to("desktop") {
+        margin-top: 0;
+        flex: 5;
+      }
+      p{
+        width: 106%;
+        line-height: 1.5;
+        @include respond-to("tablet") {
+          width: 100%;
+        }
+      }
+
+      h3{
+        font-size: 1.1rem;
+        color: #333;
+        letter-spacing: .2rem;
+        margin-bottom: 20px;
+        border-left: 0.5px solid #333;
+        padding-left: 15px;
+
+        @include respond-to("tablet") {
+          font-size: 1.1rem;
+          border: none;
+          padding:0;
+        }
+        @include respond-to("desktop") {
+          font-size: 1.5rem;
+        }
+      }
+      
+    }
+    .popup-button{
+      text-align: center;
+      margin: 50px auto 0 auto;;
+      display: block;
+      width: 250px;
+      transition: 0.5s ;
+      font-family: $font-serif;
+      position: relative;
+      border: 0.5px solid $color-border;
+        padding: 10px 20px;
+        width: 100%;
+        overflow: visible;
+        background-color: #fff;
+        color: #333;
+        font-size: 1rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+  
+      @include respond-to("tablet") {
+        width: 200px;
+      }
+      @include respond-to("desktop") {
+        width: 250px;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        width: 60px;
+        height: 0.5px;
+        background-color: $color-border;
+        transition: 0.5s ;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      transition: 0.5s;
+    }
+    &:hover::before {
+      transition: 0.5s;
+      left: -40px;
+    }
+      
+    }
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .popup-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      position: relative;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      margin: auto;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+      line-height: 1;
+    }
+    
+    .facility-content-price {
+      margin-top: 20px;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f5f5f5;
+      }
+
+      td {
+        vertical-align: middle;
+      }
+
+      .footnote {
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 10px;
+        line-height: 1.6;
+      }
+    }
+}

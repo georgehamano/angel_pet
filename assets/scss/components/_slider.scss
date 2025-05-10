@@ -36,7 +36,7 @@
   @include respond-to("tablet") {
     align-items: normal;
     margin-top: 0;
-    height: 100vh;
+    height: calc(100vh - 80px);
   }
 }
 
@@ -139,7 +139,7 @@
   @include respond-to("tablet") {
     width: 100%;
     padding-right: 50px;
-    height: 100%;
+    height: calc(100vh - 20px);
   }
 
   .mv-slider01,
@@ -150,7 +150,7 @@
     position: relative;
 
     @include respond-to("tablet") {
-      padding-bottom: 100px;
+      padding-bottom: 80px;
     }
   }
 
@@ -184,6 +184,12 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      @include respond-to("tablet") {
+        font-size: 16px;
+      }
+      @include respond-to("desktop") {
+        font-size: 18px;
+      }
 
       &::before, &::after {
         content: "";

@@ -12,7 +12,7 @@
 
   @include respond-to("tablet") {
     justify-content: flex-start;
-    bottom: 100px;
+    bottom: 80px;
   }
 
   .business-hours-text {
@@ -441,7 +441,7 @@
     @include respond-to("tablet") {
       text-align: center;
       position: relative;
-      flex:2;
+      flex:1;
     }
   }
   .sub-title::after{
@@ -471,7 +471,7 @@
     }
   }
   .service-content{
-    max-width: 1250px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -481,13 +481,13 @@
     justify-items: center;
 
     @include respond-to("tablet") {
-    flex:8;
+    flex:9;
     }
     @include respond-to("desktop") {
       display: grid;
     grid-template-columns: 50% 50%;
     gap: 0;
-    flex:8;
+    flex:9;
     }
     
   }
@@ -512,7 +512,7 @@
   }
   .service-content-image {
     width: 100%;
-    aspect-ratio: 10 / 9; 
+    aspect-ratio: 10 / 10; 
     max-width: 100%;
     overflow: hidden;
     @include respond-to("tablet") {
@@ -555,14 +555,13 @@
       justify-content: space-evenly;
       gap:20px 0;
       padding: 0;
-      padding-left: 100px;
     }
     @include respond-to("desktop") {
       margin-left: auto;
-      margin-right: 0;
-      margin-top:200px;
+      margin-right: auto;
+      margin-top:100px;
       justify-content: space-between;
-      max-width: 1250px;
+      max-width: 1000px;
     }
 
     li{
@@ -616,6 +615,7 @@
 .main-button{
   margin-top: 50px;
   position: relative;
+  grid-column: 1 / -1; /* ← 1段下に単独表示（1列目〜最終列まで） */
 
   @include respond-to("tablet") {
     margin-top: 100px;
@@ -632,7 +632,22 @@
     @include respond-to("tablet") {
       text-align: center;
       position: relative;
-      flex:2;
+      flex:1;
+    }
+  
+  }
+  .main-button{
+    margin: 50px 0;
+    position: relative;
+    left: calc(50% + 30px);
+    transform: translateX(-50%);
+  
+    @include respond-to("tablet") {
+    margin-top: 100px;
+    position: static;
+    margin-left: auto;
+    margin-right: 0;
+    transform: none;
     }
   }
   .sub-title::after{
@@ -661,14 +676,15 @@
     }
   }
 .service-content-wrapper{
-  max-width: 1250px;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   @include respond-to("tablet") {
-    flex:8;
+    padding-left:40px;
+    flex:9;
   }
   @include respond-to("desktop") {
     flex-direction: row;
@@ -777,14 +793,14 @@
 }
 //法事・行事
 .service-section-memorial,.service-section-goods{
-  margin-top: 100px;
+  margin-top: 50px;
 
   .side-header{
     width: 60px;
     @include respond-to("tablet") {
       text-align: center;
       position: relative;
-      flex:2;
+      flex:1;
     }
 
     .sub-title::after{
@@ -814,14 +830,17 @@
     
 
     @include respond-to("tablet") {
-      flex:8;
+      padding-left:40px;
+      flex:9;
+      gap:40px;
     }
     @include respond-to("desktop") {
       flex-direction: row;
-      flex:8;
+      flex:9;
     }
     .service-content-image{
       width: 100%;
+      aspect-ratio: 10 / 10; 
       img {
         width: 100%;
         height: 100%;
@@ -834,19 +853,37 @@
     .service-content-text{
       width: 100%;
       height: 100%;
-      padding: 20px;
       padding-left:0px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: left;
+      margin-top: 50px;
+      margin-left:-35px;
+
+      @include respond-to("tablet") {
+        margin-left: 0;
+      }
+      p{
+        width: 106%;
+        line-height: 1.5;
+        @include respond-to("tablet") {
+          width: 100%;
+        }
+      }
+
       h3{
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #333;
-        letter-spacing: .3rem;
+        letter-spacing: .2rem;
         margin-bottom: 20px;
+        border-left: 0.5px solid #333;
+        padding-left: 15px;
+
         @include respond-to("tablet") {
           font-size: 1.1rem;
+          border: none;
+          padding:0;
         }
         @include respond-to("desktop") {
           font-size: 1.5rem;
@@ -854,15 +891,19 @@
       }
       @include respond-to("desktop") {
         flex: 5;
-        padding: 0 40px;
+        
       }
     }
     .main-button{
-      margin: 50px auto;
+      margin: 50px 0 0 0;
       position: relative;
+      left: calc(50% + 30px);
+    transform: translateX(-50%);
       @include respond-to("tablet") {
+        position: static;
         margin-left: auto;
         margin-right: 0;
+        transform: none;
       }
     }
   }
@@ -873,8 +914,12 @@
     
     .service-content{
       @include respond-to("tablet") {
-        flex-direction: row-reverse;
+        
+        
       }
+      @include respond-to("desktop") {
+        flex-direction: row-reverse;
+       }
     }
     .sub-title::before{
        content: "Memorial goods";

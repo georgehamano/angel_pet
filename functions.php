@@ -176,6 +176,14 @@ function enqueue_swiper_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_swiper_scripts');
 
+// 固定ページでのみpopup.jsを読み込む
+function enqueue_popup_script() {
+	if (is_page()) {
+		wp_enqueue_script('popup-script', get_template_directory_uri() . '/js/popup.js', array(), _S_VERSION, true);
+	}
+}
+add_action('wp_enqueue_scripts', 'enqueue_popup_script');
+
 /**
  * Implement the Custom Header feature.
  */
