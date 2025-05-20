@@ -12,9 +12,9 @@ get_header();
 ?>
 
 <div class="content-area">
-	<main id="single" class="site-main">
+    <main id="single" class="site-main">
 
-		<?php
+        <?php
 		while (have_posts()) :
 			the_post();
 
@@ -35,13 +35,13 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+    </main><!-- #main -->
 
-	<aside class="widget-area">
-		<?php if (is_active_sidebar('sidebar-1')) : ?>
-			<?php dynamic_sidebar('sidebar-1'); ?>
-		<?php endif; ?>
-	</aside>
+    <aside class="widget-area">
+        <?php if (is_active_sidebar('sidebar-1')) : ?>
+        <?php dynamic_sidebar('sidebar-1'); ?>
+        <?php endif; ?>
+    </aside>
 </div>
 
 <?php

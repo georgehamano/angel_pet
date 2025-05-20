@@ -256,3 +256,12 @@ function wpcf7_autop_return_false()
 {
 	return false;
 }
+
+// サイドバーの最新記事の日付フォーマットを変更
+function custom_recent_posts_date_format($date)
+{
+	return date_i18n('Y年n月j日', strtotime($date));
+}
+add_filter('get_the_date', 'custom_recent_posts_date_format');
+add_filter('get_the_modified_date', 'custom_recent_posts_date_format');
+add_filter('widget_recent_posts_date_format', 'custom_recent_posts_date_format');
