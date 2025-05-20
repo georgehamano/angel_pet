@@ -1,0 +1,218 @@
+.site-main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .site-main {
+    padding: 60px 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .site-main {
+    padding: 80px 60px;
+  }
+}
+
+.post-navigation {
+  margin: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .post-navigation {
+    margin: 60px 0;
+  }
+}
+.post-navigation .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 45%;
+}
+.post-navigation .nav-previous a,
+.post-navigation .nav-next a {
+  display: block;
+  padding: 15px;
+  border: 1px solid #ddd;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.post-navigation .nav-previous a:hover,
+.post-navigation .nav-next a:hover {
+  background-color: #f5f5f5;
+}
+.post-navigation .nav-next {
+  text-align: right;
+}
+.post-navigation .nav-subtitle {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+.post-navigation .nav-title {
+  font-size: 1rem;
+  color: #333;
+}
+
+.comments-area {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #ddd;
+}
+@media screen and (min-width: 768px) {
+  .comments-area {
+    margin-top: 80px;
+    padding-top: 60px;
+  }
+}
+.comments-area .comments-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+.comments-area .comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+.comments-area .comment-list .comment {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+.comments-area .comment-list .comment:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.comments-area .comment-list .comment-meta {
+  margin-bottom: 15px;
+}
+.comments-area .comment-list .comment-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.comments-area .comment-list .comment-author .avatar {
+  border-radius: 50%;
+}
+.comments-area .comment-list .comment-author .fn {
+  font-style: normal;
+  font-weight: bold;
+}
+.comments-area .comment-list .comment-metadata {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+.comments-area .comment-list .comment-content {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.comments-area .comment-list .reply {
+  margin-top: 15px;
+}
+.comments-area .comment-list .reply a {
+  font-size: 0.8rem;
+  color: #666;
+  text-decoration: none;
+}
+.comments-area .comment-list .reply a:hover {
+  color: #333;
+}
+.comments-area .comment-respond {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #ddd;
+}
+.comments-area .comment-respond .comment-reply-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+.comments-area .comment-respond .comment-form {
+  display: grid;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .comments-area .comment-respond .comment-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 768px) {
+  .comments-area .comment-respond .comment-form .comment-form-author,
+  .comments-area .comment-respond .comment-form .comment-form-email,
+  .comments-area .comment-respond .comment-form .comment-form-url {
+    grid-column: span 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .comments-area .comment-respond .comment-form .comment-form-comment {
+    grid-column: 1/-1;
+  }
+}
+.comments-area .comment-respond .comment-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+.comments-area .comment-respond .comment-form input[type=text],
+.comments-area .comment-respond .comment-form input[type=email],
+.comments-area .comment-respond .comment-form input[type=url],
+.comments-area .comment-respond .comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.comments-area .comment-respond .comment-form input[type=text]:focus,
+.comments-area .comment-respond .comment-form input[type=email]:focus,
+.comments-area .comment-respond .comment-form input[type=url]:focus,
+.comments-area .comment-respond .comment-form textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+.comments-area .comment-respond .comment-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.comments-area .comment-respond .comment-form .submit {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.comments-area .comment-respond .comment-form .submit:hover {
+  background-color: #666;
+}/*# sourceMappingURL=single.css.map */

@@ -1,0 +1,191 @@
+.contact {
+    .sub-title::after {
+        left: 26px;
+        bottom: -33px;
+
+        @include respond-to("tablet") {
+            left: 33px;
+            bottom: -33px;
+        }
+    }
+
+    .sub-title::before {
+        content: "Reservation";
+        left: 20px;
+        bottom: -95px;
+
+        @include respond-to("tablet") {
+            left: 27px;
+            bottom: -100px;
+        }
+    }
+
+    .page-thumbnail {
+        width: 100%;
+        aspect-ratio: 10 / 10;
+
+        @include respond-to("tablet") {
+            height: 400px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 35%;
+        }
+    }
+
+    .page-container-wrap {
+        margin: 80px auto;
+
+        @include respond-to("tablet") {
+            margin: 100px auto;
+            width: 800px;
+        }
+    }
+
+    .wpcf7 {
+        width: 100%;
+    }
+
+    .contact-content-wrap {
+        max-width: 800px;
+        margin: 80px auto 0px;
+
+        h3 {
+            font-size: 1.1rem;
+            color: #333;
+            letter-spacing: .2rem;
+            margin-bottom: 20px;
+            border-left: 0.5px solid #333;
+            padding-left: 15px;
+            text-align: center;
+
+            @include respond-to("tablet") {
+                font-size: 1.1rem;
+                border: none;
+                padding: 0;
+            }
+
+            @include respond-to("desktop") {
+                font-size: 1.5rem;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 20px;
+            line-height: 2;
+        }
+    }
+}
+
+.contact-form-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        justify-content: space-between;
+
+        @media (min-width: 768px) {
+            flex-wrap: nowrap;
+        }
+
+        .form-label {
+            width: 100%;
+            font-weight: bold;
+
+            @media (min-width: 768px) {
+                width: 200px;
+            }
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .form-radio {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-weight: normal;
+            }
+        }
+
+        .form-submit {
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            width: 250px;
+            transition: 0.5s;
+            font-family: $font-serif;
+            position: relative;
+            border: 0.5px solid $color-border;
+            padding: 10px 20px;
+            width: 100%;
+            overflow: visible;
+            background-color: #fff;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+
+            @include respond-to("tablet") {
+                width: 200px;
+            }
+
+            @include respond-to("desktop") {
+                width: 250px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -30px;
+                width: 60px;
+                height: 0.5px;
+                background-color: $color-border;
+                transition: 0.5s;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+                transition: 0.5s;
+            }
+
+            &:hover::before {
+                transition: 0.5s;
+                left: -40px;
+            }
+        }
+    }
+}

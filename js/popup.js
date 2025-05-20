@@ -1,18 +1,20 @@
-const openBtn = document.getElementById('openPopup');
-const closeBtn = document.getElementById('closePopup');
-const popup = document.getElementById('popup');
-
-openBtn.addEventListener('click', () => {
-  popup.style.display = 'flex';
+document.querySelectorAll('.open-popup').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const popupId = btn.dataset.target;
+    document.getElementById(popupId)?.classList.add('show');
+  });
 });
 
-closeBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
+document.querySelectorAll('.close-popup').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.popup-overlay').classList.remove('show');
+  });
 });
 
-// オーバーレイクリックで閉じる
-popup.addEventListener('click', (e) => {
-  if (e.target === popup) {
-    popup.style.display = 'none';
-  }
+document.querySelectorAll('.popup-overlay').forEach(popup => {
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.classList.remove('show');
+    }
+  });
 });

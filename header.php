@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -14,7 +15,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -26,13 +27,13 @@
     <?php wp_body_open(); ?>
     <div id="page" class="site">
         <a class="skip-link screen-reader-text"
-            href="#primary"><?php esc_html_e( 'Skip to content', 'angel_pet' ); ?></a>
+            href="#primary"><?php esc_html_e('Skip to content', 'angel_pet'); ?></a>
         <div class="header-contact">
             <p><span class="header-contact-text">まずはご相談ください</span><span class="header-contact-tel"><a
                         href="tel:0120-011-200"><i class="fa-solid fa-phone"></i>0120-011-200</a><br>
                     （電話受付 9:00 - 17:00）</span></p>
             <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                class="contact-button">お問い合わせ・ご予約はこちら<br><span>Contact・Reserve</span></a>
+                class="contact-button">ペット火葬のご予約はこちら<br><span>Contact・Reserve</span></a>
         </div>
         <header id="masthead" class="site-header">
             <div class="site-branding">
@@ -41,13 +42,13 @@
                 if ($custom_logo_id) {
                     $logo_desktop = get_template_directory_uri() . '/images/angel-logo-h.svg';
                     $logo_mobile = get_template_directory_uri() . '/images/angel-logo-w.svg';
-                    ?>
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="custom-logo-link" rel="home">
-                    <img src="<?php echo esc_url($logo_desktop); ?>" class="custom-logo desktop-logo"
-                        alt="<?php bloginfo('name'); ?>">
-                    <img src="<?php echo esc_url($logo_mobile); ?>" class="custom-logo mobile-logo"
-                        alt="<?php bloginfo('name'); ?>">
-                </a>
+                ?>
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="custom-logo-link" rel="home">
+                        <img src="<?php echo esc_url($logo_desktop); ?>" class="custom-logo desktop-logo"
+                            alt="<?php bloginfo('name'); ?>">
+                        <img src="<?php echo esc_url($logo_mobile); ?>" class="custom-logo mobile-logo"
+                            alt="<?php bloginfo('name'); ?>">
+                    </a>
                 <?php
                 }
                 ?>

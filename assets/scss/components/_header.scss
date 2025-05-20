@@ -21,6 +21,9 @@
   display: block;
   text-align: left;
   padding: 15px 0 15px 18px;
+  position: relative;
+  z-index: 2;
+
   @include respond-to("tablet") {
     padding: 0;
   }
@@ -132,7 +135,9 @@
   position: relative;
   flex-direction: column;
   justify-content: center;
+  transition: 0.5s;
   font-family: "Noto Serif JP", serif;
+  overflow: visible;
 }
 
 .header-contact .contact-button::before {
@@ -144,13 +149,30 @@
   position: absolute;
   top: 50%;
   left: -45px;
+  transition: 0.5s;
+
+
+
 }
 
 .header-contact .contact-button:hover {
-  background-color: #010914;
+  background-color: #333;
+  transition: 0.5s;
+  color: #fff !important;
+
+  &::before {
+    transition: 0.5s;
+    left: -50px;
+  }
 }
 
 .header-contact .contact-button span {
   font-size: 0.8rem;
   color: #949494;
+  transition: 0.5s;
+
+  &:hover {
+    color: #fff;
+    transition: 0.5s;
+  }
 }
