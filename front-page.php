@@ -134,7 +134,7 @@ get_header();
             </div>
         </div>
         <div class="main-button">
-            <a href="<?php echo home_url('/#'); ?>" class="button">霊園について<br><span>ABOUT</span></a>
+            <a href="<?php echo home_url('/about'); ?>" class="button">霊園について<br><span>ABOUT</span></a>
         </div>
     </section>
     <section class="service-section service-section-pet">
@@ -162,7 +162,8 @@ get_header();
             <li>ご骨葬<span class="service-content-list-text">(僧侶による読経有)</span></li>
             <li>合同火葬プラン<span>+</span>合祀墓</li>
             <div class="main-button">
-                <a href="<?php echo home_url('/#'); ?>" class="button">ペット火葬について<br><span>Pet Cremation</span></a>
+                <a href="<?php echo home_url('/cremation'); ?>" class="button">ペット火葬について<br><span>Pet
+                        Cremation</span></a>
             </div>
         </ul>
 
@@ -173,25 +174,27 @@ get_header();
                 <h2 class="vertical-title sub-title">施設紹介</h2>
             </div>
             <div class="service-content-wrapper">
-                <div class="service-content service-content-columbarium">
+                <a href="<?php echo home_url('/facility#facility2'); ?>"
+                    class="service-content service-content-columbarium">
                     <div class="service-content-text">
                         <h3>納骨堂<span>Columbarium</span></h3>
                         <p>愛する家族の温もりを忘れず、穏やかに偲ぶ納骨堂。<br>
                             ご家族がいつでもお参りできるよう、落ち着いた空間でお迎えいたします。</p>
                     </div>
-                </div>
-                <div class="service-content service-content-cemetery">
+                </a>
+                <a href="<?php echo home_url('/facility#facility1'); ?>"
+                    class="service-content service-content-cemetery">
                     <div class="service-content-text">
                         <h3>墓地<span>Cemetery</span></h3>
                         <p>自然の中で大切な想いを静かに見守る墓地。<br>
                             柔らかな太陽の光に包まれ、心穏やかにお参りいただけます。</p>
                     </div>
-                </div>
+                </a>
             </div>
 
         </div>
         <div class="main-button">
-            <a href="<?php echo home_url('/#'); ?>" class="button">施設紹介<br><span>Facility</span></a>
+            <a href="<?php echo home_url('/facility'); ?>" class="button">施設紹介<br><span>Facility</span></a>
         </div>
     </section>
     <section class="service-section service-section-memorial">
@@ -205,12 +208,12 @@ get_header();
                         alt="法事・行事">
                 </div>
                 <div class="service-content-text">
-                    <h3>大切なペットを偲び、<br>
-                        感謝をこめて供養いたします。</h3>
-                    <p>法要や年忌供養に加え、春・秋の合同供養祭など（内容要確認。仮の文章です。）ご家族とともに心を寄せる機会をご用意しております。
-                        四季折々の行事を通じて、変わらぬ想いを届けながら、穏やかな時間の中で、大切な存在を偲ぶひとときをお過ごしください。</p>
+                    <h3>釈迦寺僧侶により丁寧に<br>
+                        ご供養させていただきます。</h3>
+                    <p>当霊園では、釈迦寺の僧侶がご家族に寄り添い、礼拝堂や墓前、納骨堂前にて初七日、四十九日、百か日、祥月命日、一周忌、三回忌、納骨式、墓石・位牌の開眼などの個別法要を丁寧に執り行っております。また、春彼岸（3月）、盂蘭盆会（8月）、秋彼岸（9月）、修生会（1月1日）などの合同法要では、亡くなられたご家族のお名前を読み上げ、心を込めてご供養させていただきます。
+                    </p>
                     <div class="main-button">
-                        <a href="<?php echo home_url('/#'); ?>" class="button">法事・行事について<br><span>Memorial
+                        <a href="<?php echo home_url('/memorial'); ?>" class="button">法事・行事について<br><span>Memorial
                                 events</span></a>
                     </div>
                 </div>
@@ -230,7 +233,7 @@ get_header();
                     <p>ご遺骨を納めるペンダントや写真立てをはじめ、さまざまなかたちで偲ぶための品々をご案内いたします。<br>
                         変わらぬ愛を込めたひとつひとつの品が、これからもご家族の心を温かくつないでいきますように。</p>
                     <div class="main-button">
-                        <a href="<?php echo home_url('/#'); ?>" class="button">メモリアルグッツ<br><span>Memorial
+                        <a href="<?php echo home_url('/goods'); ?>" class="button">メモリアルグッツ<br><span>Memorial
                                 Goods</span></a>
                     </div>
                 </div>

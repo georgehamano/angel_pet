@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -71,22 +72,25 @@
                     <li>営業時間：9:00-17:00 (年中無休)</li>
                 </ul>
                 <div class="footer-content footer-content-sns">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/icon-instagram.svg" alt=" エンジェルペット霊園">
-                    <span>Instagram</span>
+                    <a href="https://www.instagram.com/angel_pet.cemetery/" target="_blank">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon-instagram.svg"
+                            alt=" エンジェルペット霊園">
+                        <span>Instagram</span>
+                    </a>
                 </div>
             </div>
             <div class="footer-content footer-content-menu">
                 <h2>Menu</h2>
                 <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'menu-1',
-                            'menu_id'        => 'primary-menu',
-                            'container'      => false,
-                            'menu_class'     => 'menu',
-                        )
-                    );
-                    ?>
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'primary-menu',
+                        'container'      => false,
+                        'menu_class'     => 'menu',
+                    )
+                );
+                ?>
             </div>
 
             <div class="footer-content footer-content-contact">
@@ -113,10 +117,10 @@
         </div>
     </section>
     <div class="site-info">
-        <a href="<?php echo esc_url( __( 'https://angelpet.jp/', 'angel_pet' ) ); ?>">
+        <a href="<?php echo esc_url(__('https://angelpet.jp/', 'angel_pet')); ?>">
             <?php
-				printf( esc_html__( 'powered by %s', 'angel_pet' ), 'エンジェルペット霊園' );
-				?>
+            printf(esc_html__('powered by %s', 'angel_pet'), 'エンジェルペット霊園');
+            ?>
         </a>
 
     </div><!-- .site-info -->

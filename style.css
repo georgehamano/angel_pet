@@ -61,7 +61,7 @@ a {
   color: #0073aa;
 }
 a:hover {
-  color: #666;
+  color: #093672;
 }
 
 .vertical-title {
@@ -111,13 +111,12 @@ a:hover {
   text-align: center;
   margin: 0 auto;
   display: block;
-  width: 250px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 @media screen and (min-width: 768px) {
   .main-button {
-    width: 200px;
+    width: 220px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -133,7 +132,7 @@ a:hover {
 .main-button a {
   font-family: "Noto Serif JP", serif;
   position: relative;
-  border: 0.5px solid #515151;
+  border: 1px solid #515151;
   padding: 10px 20px;
   width: auto;
   overflow: visible;
@@ -144,6 +143,16 @@ a:hover {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .main-button a {
+    width: 220px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-button a {
+    width: 250px;
+  }
 }
 .main-button a::before {
   content: "";
@@ -224,7 +233,7 @@ a:hover {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    padding: 25px 0 0 50px;
+    padding: 25px 0;
   }
 }
 
@@ -233,27 +242,30 @@ a:hover {
   text-align: left;
   padding: 15px 0 15px 18px;
   position: relative;
-  z-index: 2;
+  z-index: 1010;
 }
 @media screen and (min-width: 768px) {
   .site-branding {
     padding: 0;
+    z-index: 1012;
   }
 }
 .site-branding .custom-logo-link {
   display: block;
   max-width: 200px;
+  height: 80px;
 }
 @media screen and (min-width: 768px) {
   .site-branding .custom-logo-link {
     margin: 0 auto;
     padding: 0;
+    height: auto;
   }
 }
 .site-branding .custom-logo {
   max-width: 100%;
   height: auto;
-  width: 267px;
+  width: auto;
   height: 50px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -269,6 +281,13 @@ a:hover {
 }
 .site-branding .mobile-logo {
   display: block;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  -webkit-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 @media screen and (min-width: 768px) {
   .site-branding {
@@ -276,11 +295,26 @@ a:hover {
   }
   .site-branding .desktop-logo {
     display: block;
-    width: 58px;
+    width: auto;
+    max-width: 110px;
+    margin-left: 25px;
   }
   .site-branding .mobile-logo {
     display: none;
   }
+}
+.site-branding .default-logo {
+  opacity: 1;
+  z-index: 1;
+}
+.site-branding .scrolled-logo {
+  z-index: 2;
+}
+.site-branding .logo-scrolled .default-logo {
+  opacity: 0;
+}
+.site-branding .logo-scrolled .scrolled-logo {
+  opacity: 1;
 }
 
 .header-contact {
@@ -438,6 +472,8 @@ a:hover {
   cursor: pointer;
   z-index: 1001;
   padding: 0;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 @media screen and (min-width: 768px) {
   .menu-toggle {
@@ -457,6 +493,7 @@ a:hover {
   font-family: "Noto Serif JP", serif;
   font-size: 9px;
   line-height: 25px;
+  color: #333;
 }
 
 #site-navigation {
@@ -472,6 +509,7 @@ a:hover {
           box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   -webkit-transition: right 0.3s ease;
   transition: right 0.3s ease;
+  z-index: 1010;
 }
 @media screen and (min-width: 768px) {
   #site-navigation {
@@ -503,8 +541,8 @@ a:hover {
   .menu-container {
     position: fixed;
     bottom: 0;
-    left: 50px;
-    margin-bottom: 20px;
+    left: 38px;
+    margin-bottom: 53px;
   }
 }
 
@@ -529,9 +567,37 @@ a:hover {
   padding: 0.5rem 0;
   text-decoration: none;
   color: #515151;
+  font-family: "Noto Serif JP", serif;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  position: relative;
+  display: inline-block;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
 }
 .menu a:hover {
-  color: #0073aa;
+  color: #093672;
+}
+.menu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 80%;
+  -webkit-transform: translateY(-50%) scaleX(0);
+          transform: translateY(-50%) scaleX(0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  height: 1px;
+  width: 100%;
+  background-color: #093672;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.menu a:hover::before {
+  -webkit-transform: translateY(-50%) scaleX(1);
+          transform: translateY(-50%) scaleX(1);
 }
 
 .business-hours {
@@ -1712,13 +1778,17 @@ a:hover {
   opacity: 0;
 }
 
+.mv-slider {
+  --swiper-theme-color: #333;
+}
+
 .mv-slider-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
   position: relative;
-  height: calc(100vh - 80px);
+  height: calc(var(--vh, 1vh) * 100 - 80px);
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -1730,7 +1800,7 @@ a:hover {
         -ms-flex-align: normal;
             align-items: normal;
     margin-top: 0;
-    height: calc(100vh - 80px);
+    height: calc(var(--vh, 1vh) * 100 - 80px);
   }
 }
 
@@ -1829,17 +1899,18 @@ a:hover {
 
 .mv-slider {
   width: calc(100% - 60px);
-  height: calc(100vh - 80px);
+  height: calc(var(--vh, 1vh) * 100 - 80px);
   overflow: hidden;
   position: relative;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  pointer-events: none;
 }
 @media screen and (min-width: 768px) {
   .mv-slider {
     width: 100%;
     padding-right: 50px;
-    height: calc(100vh - 20px);
+    height: calc(var(--vh, 1vh) * 100 - 20px);
   }
 }
 .mv-slider .mv-slider01,
@@ -1848,6 +1919,10 @@ a:hover {
   height: calc(100% - 80px);
   overflow: hidden;
   position: relative;
+  pointer-events: none;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
+  /* ← ページの縦スクロールは許可する */
 }
 @media screen and (min-width: 768px) {
   .mv-slider .mv-slider01,
@@ -1868,6 +1943,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  pointer-events: none;
 }
 .mv-slider .slider-item img {
   width: 100%;
@@ -2357,6 +2433,16 @@ a:hover {
   font-weight: 600;
   font-family: "Noto Serif JP", serif;
   font-size: 1.5rem;
+}
+
+.footer-content-sns a {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
 
 .footer-content-banner {

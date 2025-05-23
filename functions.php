@@ -213,6 +213,13 @@ function enqueue_accordion_script()
 }
 add_action('wp_enqueue_scripts', 'enqueue_accordion_script');
 
+// logo.jsを読み込む
+function enqueue_logo_script()
+{
+	wp_enqueue_script('logo-script', get_template_directory_uri() . '/js/logo.js', array(), _S_VERSION, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_logo_script');
+
 /**
  * Implement the Custom Header feature.
  */

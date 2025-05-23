@@ -402,6 +402,13 @@
     }
 }
 
+.footer-content-sns a {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+}
+
+
 .footer-content-banner {
     margin: 50px 30px;
     border-bottom: solid 0.5px $color-text-lightest;

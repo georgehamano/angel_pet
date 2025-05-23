@@ -22,7 +22,7 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/images/facility-top.jpeg" alt="施設紹介">
             </div>
     </section>
-    <section class="page-container-wrap facility-wrapper">
+    <section class="page-container-wrap facility-wrapper" id="facility1">
         <div class="side-header">
             <h2 class="vertical-title">墓地</h2>
         </div>
@@ -94,7 +94,7 @@ get_header();
                 </div>
             </div>
     </section>
-    <section class="page-container facility-wrapper">
+    <section class="page-container facility-wrapper" id="facility2">
         <div class="side-header">
             <h2 class="vertical-title">納骨堂</h2>
         </div>

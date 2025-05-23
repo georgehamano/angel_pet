@@ -13,7 +13,7 @@
     height: 100vh;
     flex-direction: column;
     align-items: flex-start;
-    padding: 25px 0 0 50px;
+    padding: 25px 0;
   }
 }
 
@@ -22,27 +22,30 @@
   text-align: left;
   padding: 15px 0 15px 18px;
   position: relative;
-  z-index: 2;
+  z-index: 1010;
 
   @include respond-to("tablet") {
     padding: 0;
+    z-index: 1012;
   }
 
 
   .custom-logo-link {
     display: block;
     max-width: 200px;
+    height: 80px;
 
     @include respond-to("tablet") {
       margin: 0 auto;
       padding: 0;
+      height: auto;
     }
   }
 
   .custom-logo {
     max-width: 100%;
     height: auto;
-    width: 267px;
+    width: auto;
     height: 50px;
     object-fit: contain;
 
@@ -58,6 +61,12 @@
 
   .mobile-logo {
     display: block;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: opacity 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
   }
 
   @include respond-to("tablet") {
@@ -65,12 +74,31 @@
 
     .desktop-logo {
       display: block;
-      width: 58px;
+      width: auto;
+      max-width: 110px;
+      margin-left: 25px;
     }
 
     .mobile-logo {
       display: none;
     }
+  }
+
+  .default-logo {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .scrolled-logo {
+    z-index: 2;
+  }
+
+  .logo-scrolled .default-logo {
+    opacity: 0;
+  }
+
+  .logo-scrolled .scrolled-logo {
+    opacity: 1;
   }
 }
 

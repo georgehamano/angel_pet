@@ -26,8 +26,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div id="page" class="site">
-        <a class="skip-link screen-reader-text"
-            href="#primary"><?php esc_html_e('Skip to content', 'angel_pet'); ?></a>
+        <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'angel_pet'); ?></a>
         <div class="header-contact">
             <p><span class="header-contact-text">まずはご相談ください</span><span class="header-contact-tel"><a
                         href="tel:0120-011-200"><i class="fa-solid fa-phone"></i>0120-011-200</a><br>
@@ -37,21 +36,16 @@
         </div>
         <header id="masthead" class="site-header">
             <div class="site-branding">
-                <?php
-                $custom_logo_id = get_theme_mod('custom_logo');
-                if ($custom_logo_id) {
-                    $logo_desktop = get_template_directory_uri() . '/images/angel-logo-h.svg';
-                    $logo_mobile = get_template_directory_uri() . '/images/angel-logo-w.svg';
-                ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>" class="custom-logo-link" rel="home">
-                        <img src="<?php echo esc_url($logo_desktop); ?>" class="custom-logo desktop-logo"
-                            alt="<?php bloginfo('name'); ?>">
-                        <img src="<?php echo esc_url($logo_mobile); ?>" class="custom-logo mobile-logo"
-                            alt="<?php bloginfo('name'); ?>">
-                    </a>
-                <?php
-                }
-                ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="custom-logo-link" rel="home">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/angel-logo-h.svg"
+                        class="custom-logo desktop-logo" alt="<?php bloginfo('name'); ?>">
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/angel-logo-w.svg"
+                        class="custom-logo mobile-logo default-logo" alt="<?php bloginfo('name'); ?>">
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/angel-logo-mark.svg"
+                        class="custom-logo mobile-logo scrolled-logo" alt="<?php bloginfo('name'); ?>">
+                </a>
             </div><!-- .site-branding -->
 
             <nav id="site-navigation" class="main-navigation">
